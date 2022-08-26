@@ -1,0 +1,7 @@
+verilator --trace \
+   --cc rtl/x_clocked_delay_line.sv \
+   --exe tb/x_clocked_delay_line_tb.cpp
+
+make -C obj_dir -f Vx_clocked_delay_line.mk Vx_clocked_delay_line
+
+./obj_dir/Vx_clocked_delay_line
