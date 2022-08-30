@@ -1,0 +1,7 @@
+set_io i_clk         J3
+set_io i_nrst        D16
+set_io o_dl_tx       B4
+set_io i_dl_rx       B5
+set_io o_uart_tx     B12
+set_io i_uart_rx     B10
+ 

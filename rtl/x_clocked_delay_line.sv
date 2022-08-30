@@ -1,5 +1,5 @@
 module x_clocked_delay_line #(
-   localparam p_dl_length = 64,
+   localparam p_dl_length = 4096,
    localparam p_clk_hz    = 12000000, 
    localparam p_baud      = 115200
 )(

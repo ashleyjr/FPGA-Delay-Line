@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "========================================================"
+echo "Running synth..."
+rm -f syn.log
+yosys -p 'synth_ice40 -top x_clocked_delay_line -blif x_clocked_delay_line.blif -json x_clocked_delay_line.json' rtl/x_clocked_delay_line.sv > syn.log
+cat syn.log | grep -A30 statistics
+echo "========================================================"
+echo "Running place and route..."
+rm -f pnr.log
+nextpnr-ice40 --hx8k --json x_clocked_delay_line.json --package ct256 --pcf synth/x_clocked_delay_line.pcf --asc x_clocked_delay_line.asc &> pnr.log
+cat pnr.log | grep -A6 "Device utilisation"
+echo "========================================================"
+echo "Running Timing check..."
+icetime -d hx8k x_clocked_delay_line.asc > x_clocked_delay_line.time
+cat x_clocked_delay_line.time
