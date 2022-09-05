@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "========================================================"
+echo "Packing..."
+icepack x_clocked_delay_line.asc x_clocked_delay_line.bin
+echo "========================================================"
+echo "Writing..."
+iceprog  -S x_clocked_delay_line.bin
+echo "========================================================"

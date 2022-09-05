@@ -1,13 +1,13 @@
 module x_clocked_delay_line #(
-   localparam p_dl_length = 4096,
-   localparam p_clk_hz    = 12000000, 
+   localparam p_dl_length = 16,
+   localparam p_clk_hz    = 79500000, 
    localparam p_baud      = 115200
 )(
    input    logic       i_clk,
    input    logic       i_nrst,
    // Delay Line 
-   input    logic       i_dl_rx,
-   output   logic       o_dl_tx,
+   inout    logic       i_dl_rx,
+   inout    logic       o_dl_tx,
    // UART
    input    logic       i_uart_rx,
    output   logic       o_uart_tx
@@ -69,27 +69,79 @@ module x_clocked_delay_line #(
    uart_sm_t                                 uart_sm_q;
    logic                                     uart_sm_en;
 
+   SB_IO #(
+      .PIN_TYPE            (6'b000001        ),
+      .PULLUP              (1'b0             ),
+      .NEG_TRIGGER         (1'b0             ),
+      .IO_STANDARD         ("SB_LVCMOS"      )
+   ) u_io_pin_0 (
+      .PACKAGE_PIN         (i_dl_rx ),
+      .LATCH_INPUT_VALUE   (1'b0    ),
+      .CLOCK_ENABLE        (1'b0    ),
+      .INPUT_CLK           (1'b0    ),
+      .OUTPUT_CLK          (1'b0    ),
+      .OUTPUT_ENABLE       (1'b0    ),
+      .D_OUT_0             (1'b0    ),
+      .D_OUT_1             (1'b0    ),
+      .D_IN_0              (dl_rx   ),
+      .D_IN_1              (        )
+   );
+
+   SB_IO #(
+      .PIN_TYPE            (6'b011000        ),
+      .PULLUP              (1'b0             ),
+      .NEG_TRIGGER         (1'b0             ),
+      .IO_STANDARD         ("SB_LVCMOS"      )
+   ) u_io_pin_1 (
+      .PACKAGE_PIN         (o_dl_tx ),
+      .LATCH_INPUT_VALUE   (1'b0    ),
+      .CLOCK_ENABLE        (1'b0    ),
+      .INPUT_CLK           (1'b0    ),
+      .OUTPUT_CLK          (1'b0    ),
+      .OUTPUT_ENABLE       (1'b0    ),
+      .D_OUT_0             (dl_tx   ),
+      .D_OUT_1             (1'b0    ),
+      .D_IN_0              (        ),
+      .D_IN_1              (        )
+   );
+
+
+   SB_PLL40_CORE #(
+      .FEEDBACK_PATH ("SIMPLE"   ),
+      .PLLOUT_SELECT ("GENCLK"   ),
+      // 79.5MHz
+      .DIVR          (4'd0       ),
+      .DIVF          (7'd52      ),
+      .DIVQ          (3'd3       ),
+      .FILTER_RANGE  (3'b001     )
+   ) u_pll (
+      .LOCK          (),
+      .RESETB        (i_nrst     ),
+      .BYPASS        (1'b0       ),
+      .REFERENCECLK  (i_clk      ),
+      .PLLOUTCORE    (clk        )
+   );
    ///////////////////////////////////////////////////////////////////
    // Toggle Delay Line TX
    
-   assign o_dl_tx     = dl_tx_q;
+   assign dl_tx     = dl_tx_q;
    assign dl_tx_d     = ~dl_tx_q;
    assign dl_tx_start = (p1_uart_rx & ~p2_uart_rx & (dl_cnt_q == 0) & (uart_sm_q == IDLE)); 
    assign dl_tx_stop  = ((uart_sm_q == STOP) & uart_frame_top & uart_timer_top); 
    assign dl_tx_en    = dl_tx_start | dl_tx_stop;
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
-      if(!i_nrst)       dl_tx_q <= 'd0;
+   always_ff@(posedge clk or negedge i_nrst) begin
+      if(!i_nrst)       dl_tx_q <= 'd1;
       else if(dl_tx_en) dl_tx_q <= dl_tx_d;
    end
  
    ///////////////////////////////////////////////////////////////////
    // Capture Delay Line RX
      
-   assign dl_rx_d  = {dl_rx_q[p_dl_length-2:0], i_dl_rx};
+   assign dl_rx_d  = {dl_rx_q[p_dl_length-2:0], dl_rx};
    assign dl_rx_en = dl_cnt_en;
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst)       dl_rx_q <= 'd0;
       else if(dl_rx_en) dl_rx_q <= dl_rx_d;
    end
@@ -101,7 +153,7 @@ module x_clocked_delay_line #(
    assign dl_cnt_top = (dl_cnt_q == p_dl_cmp);
    assign dl_cnt_d   = (dl_cnt_top) ? 'd0 : (dl_cnt_q + 'd1); 
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst)          dl_cnt_q <= 'd0;
       else if(dl_cnt_en)   dl_cnt_q <= dl_cnt_d;
    end
@@ -112,12 +164,12 @@ module x_clocked_delay_line #(
  
    assign p0_uart_rx = i_uart_rx;
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst) p1_uart_rx <= 'd1;
       else        p1_uart_rx <= p0_uart_rx;
    end
  
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst) p2_uart_rx <= 'd1;
       else        p2_uart_rx <= p1_uart_rx;
    end 
@@ -131,7 +183,7 @@ module x_clocked_delay_line #(
    assign uart_timer_d   = (uart_timer_top) ? 'd0 : uart_timer_inc; 
    assign uart_timer_en  = (uart_sm_q != IDLE);
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst)             uart_timer_q <= 'd0;
       else if(uart_timer_en)  uart_timer_q <= uart_timer_d;
    end 
@@ -142,7 +194,7 @@ module x_clocked_delay_line #(
    assign uart_frame_d   = (uart_frame_top) ? 'd0 : uart_frame_inc;
    assign uart_frame_en  = (uart_sm_q == STOP) & uart_timer_top;
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst)             uart_frame_q <= 0;
       else if(uart_frame_en)  uart_frame_q <= uart_frame_d;
    end
@@ -164,7 +216,7 @@ module x_clocked_delay_line #(
 
    assign uart_sm_en = (uart_sm_q == IDLE) ? dl_cnt_top : uart_timer_top; 
  
-   always_ff@(posedge i_clk or negedge i_nrst) begin
+   always_ff@(posedge clk or negedge i_nrst) begin
       if(!i_nrst)          uart_sm_q <= IDLE;
       else if(uart_sm_en)  uart_sm_q <= uart_sm_d;
    end
