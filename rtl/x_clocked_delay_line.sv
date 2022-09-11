@@ -35,6 +35,7 @@ module x_clocked_delay_line #(
    logic                                     dl_tx_start;
    logic                                     dl_tx_stop;
 
+   wire [100:0]                             dl_rx_stall;
    logic [p_dl_length-1:0]                   dl_rx_d;
    logic [p_dl_length-1:0]                   dl_rx_q;
    logic                                     dl_rx_en;
@@ -69,6 +70,7 @@ module x_clocked_delay_line #(
    uart_sm_t                                 uart_sm_q;
    logic                                     uart_sm_en;
 
+   //`ifdef SYNTH
    SB_IO #(
       .PIN_TYPE            (6'b000001        ),
       .PULLUP              (1'b0             ),
@@ -121,6 +123,13 @@ module x_clocked_delay_line #(
       .REFERENCECLK  (i_clk      ),
       .PLLOUTCORE    (clk        )
    );
+   //`else
+   //   assign dl_rx   = i_dl_rx;
+   //   assign o_dl_tx = dl_tx;
+   //   assign clk     = i_clk;
+
+   //`endif
+
    ///////////////////////////////////////////////////////////////////
    // Toggle Delay Line TX
    
@@ -137,8 +146,26 @@ module x_clocked_delay_line #(
  
    ///////////////////////////////////////////////////////////////////
    // Capture Delay Line RX
-     
-   assign dl_rx_d  = {dl_rx_q[p_dl_length-2:0], dl_rx};
+   
+   assign dl_rx_stall[0] = dl_rx; 
+
+   generate
+      for(genvar i=0;i<100;i++) begin
+          
+         SB_LUT4 #(
+            .LUT_INIT(16'd2)
+         ) buffers  (
+            .O (dl_rx_stall[i+1]),
+            .I0(dl_rx_stall[i]),
+            .I1(1'b0),
+            .I2(1'b0),
+            .I3(1'b0)
+         );
+
+      end
+   endgenerate
+
+   assign dl_rx_d  = {dl_rx_q[p_dl_length-2:0], dl_rx_stall[50]};
    assign dl_rx_en = dl_cnt_en;
 
    always_ff@(posedge clk or negedge i_nrst) begin
