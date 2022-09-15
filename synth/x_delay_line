@@ -1,5 +1,8 @@
 #!/bin/bash
 echo "========================================================"
+echo "Templates..."
+python tools/yaptu.py rtl/x_delay_line.tmpl > rtl/x_delay_line.sv
+echo "========================================================"
 echo "Running synth..."
 rm -f syn.log
 yosys -p 'synth_ice40 -top x_delay_line -blif x_delay_line.blif -json x_delay_line.json' rtl/x_delay_line.sv rtl/x_delay_line_cell.sv > syn.log

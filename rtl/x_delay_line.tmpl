@@ -1,0 +1,56 @@
++length=256#
+-
+module x_delay_line (
+   input    logic                         i_clk,
+   input    logic                         i_dl,
+   input    logic [$clog2(@length@)-1:0]  i_sel,
+   output   logic                         o_data
+);
+
+logic [@length@:0]   p0_dl;
+logic [@length@-1:0] p1_dl;
+logic [@length@-1:0] p2_dl;
+logic [@length@-1:0] p3_dl;
+
+assign p0_dl[0] = i_dl;
+
++for i in range(length):  
+   (* BEL="X1/Y@(i//8)+1@/lc@i%8@" *)
+   SB_LUT4 #(
+      .LUT_INIT(16'h0001      )
+   ) lut@i@ (
+      .I3      (1'b0          ),
+      .I2      (1'b0          ),
+      .I1      (1'b0          ),
+      .I0      (p0_dl[@i@]    ),
+      .O       (p0_dl[@i+1@]  )
+   );
+
+-
+
++for i in range(length):  
+   (* BEL="X2/Y@(i//8)+1@/lc@i%8@" *)
+   SB_DFF  dff_2_@i@ (
+      .C       (i_clk         ),
+      .D       (p0_dl[@i+1@]  ),
+      .Q       (p1_dl[@i@]    )
+   );
+
+   (* BEL="X3/Y@(i//8)+1@/lc@i%8@" *)
+   SB_DFF  dff_3_@i@ (
+      .C       (i_clk         ),
+      .D       (p1_dl[@i@]    ),
+      .Q       (p2_dl[@i@]    )
+   );
+
+
+   (* BEL="X29/Y@(i//8)+1@/lc@i%8@" *)
+   SB_DFF  dff_29_@i@ (
+      .C       (i_clk         ),
+      .D       (p2_dl[@i@]    ),
+      .Q       (p3_dl[@i@]    )
+   );
+-
+assign o_data = p3_dl[i_sel];
+
+endmodule
