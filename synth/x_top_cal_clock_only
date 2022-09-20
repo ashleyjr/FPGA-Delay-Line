@@ -1,0 +1,18 @@
+#!/bin/bash
+echo "========================================================"
+echo "Templates..."
+python tools/yaptu.py rtl/x_delay_line.tmpl > rtl/x_delay_line.sv
+echo "========================================================"
+echo "Running synth..."
+rm -f syn.log
+yosys -p 'synth_ice40 -top x_top_cal_clock_only -blif x_top_cal_clock_only.blif -json x_top_cal_clock_only.json' rtl/x_top_cal_clock_only.sv rtl/x_delay_line.sv rtl/x_delay_line_cell.sv > syn.log
+cat syn.log | grep -A30 statistics
+echo "========================================================"
+echo "Running place and route..."
+rm -f pnr.log
+nextpnr-ice40 --hx8k --json x_top_cal_clock_only.json --package ct256 --pcf synth/x_top_cal_clock_only.pcf --asc x_top_cal_clock_only.asc &> pnr.log
+cat pnr.log | grep -A6 "Device utilisation"
+echo "========================================================"
+echo "Running Timing check..."
+icetime -d hx8k x_top_cal_clock_only.asc > x_top_cal_clock_only.time
+cat x_top_cal_clock_only.time

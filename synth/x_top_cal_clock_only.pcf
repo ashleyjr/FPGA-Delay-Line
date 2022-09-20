@@ -1,0 +1,10 @@
+set_io i_clk         J3
+set_io o_data        P16
+set_io i_sel[0]      B9
+set_io i_sel[1]      B10
+set_io i_sel[2]      B11
+set_io i_sel[3]      B12
+set_io i_sel[4]      B13
+set_io i_sel[5]      B14
+set_io i_sel[6]      B15
+set_io i_sel[7]      B16
