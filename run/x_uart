@@ -2,7 +2,7 @@
 
 verilator --trace \
    --cc rtl/x_uart.sv \
-   --exe tb/x_uart_tb.cpp 
+   --exe tb/x_uart_tb.cpp \
 
 make -C obj_dir -f Vx_uart.mk Vx_uart
 

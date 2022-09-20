@@ -1,12 +1,12 @@
 module x_clocked_delay_line #(
-   localparam p_length = 16,
+   localparam p_length = 32,
    localparam p_clk_hz = 12000000, 
    localparam p_baud   = 115200
 )(
    input    logic                         i_clk,
    input    logic                         i_nrst,
    // Delay Line data  
-   inout    logic [p_length-1:0]          i_data,
+   input    logic [p_length-1:0]          i_data,
    // UART
    input    logic                         i_uart_rx,
    output   logic                         o_uart_tx
@@ -110,7 +110,7 @@ module x_clocked_delay_line #(
       end
    end
 
-   assign uart_sm_en = (uart_sm_q == IDLE) ? uart_frame_top : uart_timer_top; 
+   assign uart_sm_en =  (uart_sm_q == IDLE) ? ~p2_uart_rx : uart_timer_top; 
  
    always_ff@(posedge i_clk or negedge i_nrst) begin
       if(!i_nrst)          uart_sm_q <= IDLE;
