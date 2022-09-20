@@ -1,7 +1,7 @@
-module x_clocked_delay_line #(
-   localparam p_length = 32,
-   localparam p_clk_hz = 12000000, 
-   localparam p_baud   = 115200
+module x_uart #(
+   p_length = 32,
+   p_clk_hz = 12000000, 
+   p_baud   = 115200
 )(
    input    logic                         i_clk,
    input    logic                         i_nrst,

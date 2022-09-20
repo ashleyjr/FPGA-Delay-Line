@@ -5,7 +5,7 @@ python tools/yaptu.py rtl/x_delay_line.tmpl > rtl/x_delay_line.sv
 echo "========================================================"
 echo "Running synth..."
 rm -f syn.log
-yosys -p 'synth_ice40 -top x_top_cal_clock_only -blif x_top_cal_clock_only.blif -json x_top_cal_clock_only.json' rtl/x_top_cal_clock_only.sv rtl/x_delay_line.sv rtl/x_delay_line_cell.sv > syn.log
+yosys -p 'synth_ice40 -top x_top_cal_clock_only -blif x_top_cal_clock_only.blif -json x_top_cal_clock_only.json' rtl/x_top_cal_clock_only.sv rtl/x_uart.sv rtl/x_delay_line.sv rtl/x_delay_line_cell.sv > syn.log
 cat syn.log | grep -A30 statistics
 echo "========================================================"
 echo "Running place and route..."
