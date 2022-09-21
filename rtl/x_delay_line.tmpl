@@ -15,7 +15,7 @@ assign p0_dl[0] = i_dl;
 +for i in range(length):  
    (* BEL="X1/Y@(i//8)+1@/lc@i%8@" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut@i@ (
       .I3      (1'b0          ),
       .I2      (1'b0          ),

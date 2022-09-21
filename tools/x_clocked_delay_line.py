@@ -22,5 +22,5 @@ def put(tx):
     #print(f"<{hex(tx)}")
 
 put(0)
-for i in range(16//8):
-    print(get())
+for i in range(256//8):
+    print(bin(get()))

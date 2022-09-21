@@ -12,7 +12,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut0 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -23,7 +23,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut1 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -34,7 +34,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut2 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -45,7 +45,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut3 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -56,7 +56,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut4 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -67,7 +67,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut5 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -78,7 +78,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut6 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -89,7 +89,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y1/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut7 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -100,7 +100,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut8 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -111,7 +111,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut9 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -122,7 +122,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut10 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -133,7 +133,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut11 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -144,7 +144,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut12 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -155,7 +155,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut13 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -166,7 +166,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut14 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -177,7 +177,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y2/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut15 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -188,7 +188,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut16 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -199,7 +199,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut17 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -210,7 +210,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut18 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -221,7 +221,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut19 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -232,7 +232,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut20 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -243,7 +243,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut21 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -254,7 +254,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut22 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -265,7 +265,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y3/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut23 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -276,7 +276,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut24 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -287,7 +287,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut25 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -298,7 +298,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut26 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -309,7 +309,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut27 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -320,7 +320,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut28 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -331,7 +331,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut29 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -342,7 +342,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut30 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -353,7 +353,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y4/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut31 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -364,7 +364,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut32 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -375,7 +375,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut33 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -386,7 +386,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut34 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -397,7 +397,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut35 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -408,7 +408,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut36 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -419,7 +419,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut37 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -430,7 +430,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut38 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -441,7 +441,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y5/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut39 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -452,7 +452,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut40 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -463,7 +463,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut41 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -474,7 +474,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut42 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -485,7 +485,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut43 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -496,7 +496,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut44 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -507,7 +507,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut45 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -518,7 +518,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut46 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -529,7 +529,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y6/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut47 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -540,7 +540,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut48 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -551,7 +551,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut49 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -562,7 +562,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut50 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -573,7 +573,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut51 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -584,7 +584,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut52 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -595,7 +595,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut53 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -606,7 +606,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut54 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -617,7 +617,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y7/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut55 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -628,7 +628,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut56 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -639,7 +639,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut57 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -650,7 +650,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut58 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -661,7 +661,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut59 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -672,7 +672,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut60 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -683,7 +683,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut61 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -694,7 +694,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut62 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -705,7 +705,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y8/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut63 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -716,7 +716,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut64 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -727,7 +727,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut65 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -738,7 +738,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut66 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -749,7 +749,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut67 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -760,7 +760,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut68 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -771,7 +771,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut69 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -782,7 +782,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut70 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -793,7 +793,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y9/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut71 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -804,7 +804,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut72 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -815,7 +815,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut73 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -826,7 +826,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut74 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -837,7 +837,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut75 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -848,7 +848,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut76 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -859,7 +859,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut77 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -870,7 +870,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut78 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -881,7 +881,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y10/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut79 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -892,7 +892,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut80 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -903,7 +903,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut81 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -914,7 +914,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut82 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -925,7 +925,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut83 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -936,7 +936,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut84 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -947,7 +947,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut85 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -958,7 +958,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut86 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -969,7 +969,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y11/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut87 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -980,7 +980,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut88 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -991,7 +991,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut89 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1002,7 +1002,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut90 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1013,7 +1013,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut91 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1024,7 +1024,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut92 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1035,7 +1035,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut93 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1046,7 +1046,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut94 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1057,7 +1057,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y12/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut95 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1068,7 +1068,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut96 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1079,7 +1079,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut97 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1090,7 +1090,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut98 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1101,7 +1101,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut99 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1112,7 +1112,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut100 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1123,7 +1123,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut101 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1134,7 +1134,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut102 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1145,7 +1145,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y13/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut103 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1156,7 +1156,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut104 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1167,7 +1167,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut105 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1178,7 +1178,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut106 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1189,7 +1189,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut107 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1200,7 +1200,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut108 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1211,7 +1211,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut109 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1222,7 +1222,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut110 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1233,7 +1233,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y14/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut111 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1244,7 +1244,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut112 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1255,7 +1255,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut113 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1266,7 +1266,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut114 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1277,7 +1277,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut115 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1288,7 +1288,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut116 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1299,7 +1299,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut117 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1310,7 +1310,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut118 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1321,7 +1321,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y15/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut119 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1332,7 +1332,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut120 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1343,7 +1343,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut121 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1354,7 +1354,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut122 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1365,7 +1365,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut123 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1376,7 +1376,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut124 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1387,7 +1387,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut125 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1398,7 +1398,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut126 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1409,7 +1409,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y16/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut127 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1420,7 +1420,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut128 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1431,7 +1431,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut129 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1442,7 +1442,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut130 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1453,7 +1453,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut131 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1464,7 +1464,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut132 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1475,7 +1475,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut133 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1486,7 +1486,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut134 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1497,7 +1497,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y17/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut135 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1508,7 +1508,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut136 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1519,7 +1519,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut137 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1530,7 +1530,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut138 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1541,7 +1541,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut139 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1552,7 +1552,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut140 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1563,7 +1563,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut141 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1574,7 +1574,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut142 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1585,7 +1585,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y18/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut143 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1596,7 +1596,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut144 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1607,7 +1607,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut145 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1618,7 +1618,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut146 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1629,7 +1629,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut147 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1640,7 +1640,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut148 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1651,7 +1651,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut149 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1662,7 +1662,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut150 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1673,7 +1673,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y19/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut151 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1684,7 +1684,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut152 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1695,7 +1695,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut153 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1706,7 +1706,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut154 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1717,7 +1717,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut155 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1728,7 +1728,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut156 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1739,7 +1739,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut157 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1750,7 +1750,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut158 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1761,7 +1761,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y20/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut159 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1772,7 +1772,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut160 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1783,7 +1783,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut161 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1794,7 +1794,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut162 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1805,7 +1805,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut163 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1816,7 +1816,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut164 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1827,7 +1827,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut165 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1838,7 +1838,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut166 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1849,7 +1849,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y21/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut167 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1860,7 +1860,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut168 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1871,7 +1871,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut169 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1882,7 +1882,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut170 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1893,7 +1893,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut171 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1904,7 +1904,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut172 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1915,7 +1915,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut173 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1926,7 +1926,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut174 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1937,7 +1937,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y22/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut175 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1948,7 +1948,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut176 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1959,7 +1959,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut177 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1970,7 +1970,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut178 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1981,7 +1981,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut179 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -1992,7 +1992,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut180 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2003,7 +2003,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut181 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2014,7 +2014,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut182 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2025,7 +2025,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y23/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut183 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2036,7 +2036,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut184 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2047,7 +2047,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut185 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2058,7 +2058,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut186 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2069,7 +2069,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut187 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2080,7 +2080,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut188 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2091,7 +2091,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut189 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2102,7 +2102,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut190 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2113,7 +2113,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y24/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut191 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2124,7 +2124,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut192 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2135,7 +2135,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut193 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2146,7 +2146,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut194 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2157,7 +2157,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut195 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2168,7 +2168,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut196 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2179,7 +2179,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut197 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2190,7 +2190,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut198 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2201,7 +2201,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y25/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut199 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2212,7 +2212,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut200 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2223,7 +2223,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut201 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2234,7 +2234,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut202 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2245,7 +2245,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut203 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2256,7 +2256,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut204 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2267,7 +2267,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut205 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2278,7 +2278,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut206 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2289,7 +2289,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y26/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut207 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2300,7 +2300,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut208 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2311,7 +2311,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut209 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2322,7 +2322,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut210 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2333,7 +2333,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut211 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2344,7 +2344,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut212 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2355,7 +2355,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut213 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2366,7 +2366,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut214 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2377,7 +2377,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y27/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut215 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2388,7 +2388,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut216 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2399,7 +2399,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut217 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2410,7 +2410,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut218 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2421,7 +2421,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut219 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2432,7 +2432,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut220 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2443,7 +2443,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut221 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2454,7 +2454,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut222 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2465,7 +2465,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y28/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut223 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2476,7 +2476,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut224 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2487,7 +2487,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut225 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2498,7 +2498,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut226 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2509,7 +2509,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut227 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2520,7 +2520,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut228 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2531,7 +2531,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut229 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2542,7 +2542,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut230 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2553,7 +2553,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y29/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut231 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2564,7 +2564,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut232 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2575,7 +2575,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut233 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2586,7 +2586,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut234 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2597,7 +2597,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut235 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2608,7 +2608,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut236 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2619,7 +2619,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut237 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2630,7 +2630,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut238 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2641,7 +2641,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y30/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut239 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2652,7 +2652,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut240 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2663,7 +2663,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut241 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2674,7 +2674,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut242 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2685,7 +2685,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut243 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2696,7 +2696,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut244 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2707,7 +2707,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut245 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2718,7 +2718,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut246 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2729,7 +2729,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y31/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut247 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2740,7 +2740,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc0" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut248 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2751,7 +2751,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc1" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut249 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2762,7 +2762,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc2" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut250 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2773,7 +2773,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc3" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut251 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2784,7 +2784,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc4" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut252 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2795,7 +2795,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc5" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut253 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2806,7 +2806,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc6" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut254 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),
@@ -2817,7 +2817,7 @@ assign p0_dl[0] = i_dl;
 
    (* BEL="X1/Y32/lc7" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h0001      )
+      .LUT_INIT(16'h0002      )
    ) lut255 (
       .I3      (1'b0          ),
       .I2      (1'b0          ),

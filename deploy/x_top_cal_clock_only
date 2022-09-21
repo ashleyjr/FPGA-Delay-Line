@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "========================================================"
+echo "Packing..."
+icepack x_top_cal_clock_only.asc x_top_cal_clock_only.bin
+echo "========================================================"
+echo "Writing..."
+iceprog  -S x_top_cal_clock_only.bin
+echo "========================================================"
