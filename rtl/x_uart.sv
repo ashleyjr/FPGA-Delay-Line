@@ -9,7 +9,9 @@ module x_uart #(
    input    logic [p_length-1:0]          i_data,
    // UART
    input    logic                         i_uart_rx,
-   output   logic                         o_uart_tx
+   output   logic                         o_uart_tx,
+   // Done
+   output   logic                         o_done
 );
 
    localparam                             p_uart_length = 8;
@@ -132,5 +134,8 @@ module x_uart #(
       endcase
    end
  
+   // - Signal end of frame sent
+
+   assign o_done = uart_sm_en & uart_frame_top & (uart_sm_q == STOP);
 
 endmodule
