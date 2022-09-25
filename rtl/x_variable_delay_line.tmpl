@@ -6,46 +6,32 @@ module x_variable_delay_line (
    output   logic                   o_dl
 );
 
-logic [@length@:0]   out;
-logic [@length@:0]   in;
+logic [@length@:0]   l;
 
-assign out[0] = i_dl;
+// i_ctrl   in[i+1]     i_dl    |  in[i]
+// ---------------------------------------
+//    0       0          0      |   0 
+//    0       0          1      |   0 
+//    0       1          0      |   1 
+//    0       1          1      |   1 
+//    1       0          0      |   0 
+//    1       0          1      |   1 
+//    1       1          0      |   0 
+//    1       1          1      |   1 
 
-+for i in range(length):  
++for i in range(length):    
    (* BEL="X1/Y@(i//8)+1@/lc@i%8@" *)
-   SB_LUT4 #(
-      .LUT_INIT(16'h0002      )
-   ) u_out_lut@i@ (
-      .I3      (1'b0          ),
-      .I2      (1'b0          ),
-      .I1      (1'b0          ),
-      .I0      (out[@i@]      ),
-      .O       (out[@i+1@]    )
-   );
-
-   // i_ctrl   in[i+1]   out[i+1]  |  in[i]
-   // ---------------------------------------
-   //    0       0          0      |   0 
-   //    0       0          1      |   0 
-   //    0       1          0      |   1 
-   //    0       1          1      |   1 
-   //    1       0          0      |   0 
-   //    1       0          1      |   1 
-   //    1       1          0      |   0 
-   //    1       1          1      |   1 
-
-   (* BEL="X2/Y@(i//8)+1@/lc@i%8@" *)
    SB_LUT4 #(
       .LUT_INIT(16'b0000000010101100   )
    ) u_in_lut@i@ (
       .I3      (1'b0                   ),
       .I2      (i_ctrl[@i+1@]          ),
-      .I1      (in[@i+1@]              ),
-      .I0      (out[@i+1@]             ),
-      .O       (in[@i@]                )
+      .I1      (l[@i+1@]               ),
+      .I0      (i_dl                   ),
+      .O       (l[@i@]                 )
    );
 -
 
-assign o_dl = in[0];
+assign o_dl = l[0];
 
 endmodule
