@@ -104,3 +104,24 @@ plt.grid()
 
 plt.savefig("graph.png", dpi=150)
 
+# Histogram
+freq = 96e6
+freq_MHz = freq / 1e6
+period_ps = int(1e12 / freq)
+
+plt.figure(2)
+r = []
+for d in diffs_rises_y:
+    r.append(period_ps / d )
+f = []
+for d in diffs_falls_y:
+    f.append(period_ps / d )
+
+plt.title(f"Delay per stage ({freq_MHz}MHz)")
+plt.hist(r, label='rises')
+plt.hist(f, label='falls')
+plt.ylabel("#")
+plt.xlabel("Time (ps)")
+plt.legend()
+plt.savefig("hist.png", dpi=150)
+

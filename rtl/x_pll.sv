@@ -8,9 +8,9 @@ module x_pll(
 // Select one...
 //
 // PLLOUT = 16.875MHz
-     parameter p_divr = 4'd0;
-     parameter p_divf = 7'd44;
-     parameter p_divq = 3'd5;
+//     parameter p_divr = 4'd0;
+//     parameter p_divf = 7'd44;
+//     parameter p_divq = 3'd5;
 // PLLOUT = 17.25MHz
 //     parameter p_divr = 4'd0;
 //     parameter p_divf = 7'd45;
@@ -244,9 +244,9 @@ module x_pll(
 //     parameter p_divf = 7'd62;
 //     parameter p_divq = 3'd3;
 // PLLOUT = 96.0MHz
-//     parameter p_divr = 4'd0;
-//     parameter p_divf = 7'd63;
-//     parameter p_divq = 3'd3;
+     parameter p_divr = 4'd0;
+     parameter p_divf = 7'd63;
+     parameter p_divq = 3'd3;
 // PLLOUT = 135.0MHz
 //     parameter p_divr = 4'd0;
 //     parameter p_divf = 7'd44;
