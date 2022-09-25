@@ -3,8 +3,8 @@ module x_top_cal_clock_only (
    input    logic       i_nrst,
    input    logic       i_uart_rx,
    output   logic       o_uart_tx
-);
-   logic          clk;
+); 
+   logic          d_clk;
    
    logic          p0_uart_rx;
    logic          p1_uart_rx;
@@ -14,16 +14,16 @@ module x_top_cal_clock_only (
    logic [255:0]  data_d;
    logic [255:0]  data_q;
 
-
-   x_pll u_pll(
-      .i_clk      (i_clk      ),
-      .i_nrst     (i_nrst     ),
-      .o_clk      (clk        ),
+   
+   x_variable_delay_line u_vdl(
+      .i_dl       (i_clk      ),
+      .i_ctrl     (256'h1000    ),
+      .o_dl       (d_clk      )
    );
    
    x_delay_line u_dl(
-      .i_clk      (clk        ),
-      .i_dl       (clk        ),
+      .i_clk      (i_clk      ),
+      .i_dl       (d_clk      ),
       .o_data     (data_d     )
    );
 
@@ -50,10 +50,10 @@ module x_top_cal_clock_only (
 
    x_uart  #(
       .p_length   (256        ),
-      .p_clk_hz   (16875000   ),
+      .p_clk_hz   (12000000   ),
       .p_baud     (115200     )
    ) u_uart (
-      .i_clk      (clk        ),
+      .i_clk      (i_clk      ),
       .i_nrst     (i_nrst     ),
       .i_data     (data_q     ),
       .i_uart_rx  (i_uart_rx  ),
