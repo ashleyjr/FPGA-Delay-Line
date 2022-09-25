@@ -4,6 +4,8 @@ module x_top_cal_clock_only (
    input    logic       i_uart_rx,
    output   logic       o_uart_tx
 ); 
+   
+   logic          pll_clk;
    logic          d_clk;
    
    logic          p0_uart_rx;
@@ -30,9 +32,15 @@ module x_top_cal_clock_only (
    end  
 
    assign ctrl = (1 << ctrl_q);
-   
+  
+   x_pll u_pll(
+      .i_clk      (i_clk      ),
+      .i_nrst     (i_nrst     ),
+      .o_clk      (pll_clk    )
+   );
+
    x_variable_delay_line u_vdl(
-      .i_dl       (i_clk      ),
+      .i_dl       (pll_clk    ),
       .i_ctrl     (ctrl       ),
       .o_dl       (d_clk      )
    );
