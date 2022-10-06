@@ -4,7 +4,7 @@ import sys
 import matplotlib.pyplot as plt
 
 ser = serial.Serial(
-    port='/dev/ttyUSB2',
+    port='/dev/tty.usbserial-14401',
     baudrate=115200,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
