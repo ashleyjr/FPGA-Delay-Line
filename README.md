@@ -1,5 +1,10 @@
 # FPGA-Delay-Line
 
+## Install on Ubuntu
+
+   - sudo apt-get install texlive-latex-base
+   - sudo apt-get install texlive-latex-extra
+
 ## Install on macOS Big Sur
 
    - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
