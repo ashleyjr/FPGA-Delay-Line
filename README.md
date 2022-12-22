@@ -4,6 +4,8 @@
 
    - sudo apt-get install texlive-latex-base
    - sudo apt-get install texlive-latex-extra
+   - sudo apt-get install inkscape
+
 
 ## Install on macOS Big Sur
 
