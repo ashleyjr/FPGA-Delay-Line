@@ -1,19 +1,15 @@
 \documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
 \usepackage{tikz}
 \usepackage{pagecolor}
+\usetikzlibrary{arrows,shapes.geometric,arrows.meta,calc,chains,scopes,shapes.misc,backgrounds}
 \pgfdeclarelayer{background}
 \pgfdeclarelayer{foreground}
-\usetikzlibrary{shapes.geometric}
 \pgfsetlayers{background,main,foreground}
 \pagecolor{white}
 
 \tikzset{ 
-   line/.style ={
-      -, line width=0.5mm, bend angle=90, color=black,
-   },
-   arrow/.style ={
-      ->, line width=0.5mm, bend angle=90, color=black,
-   },  
+   line/.style  = {-, line width=0.5mm, },
+   arrow/.style = {-latex,line width=0.5mm, },  
 }
 
 \begin{document}
@@ -26,7 +22,7 @@
          line width = 0.5mm,
          minimum height=20mm,
          minimum width=20mm,
-      ] (ram) at (-70mm,50mm){RAM};
+      ] (ram) at (-70mm,30mm){RAM};
 
      \node[
          rectangle,
@@ -62,7 +58,7 @@
          line width = 0.5mm,
          minimum height=20mm,
          minimum width=20mm,
-      ] (ptr) at (-30mm,-35mm){Pointer};
+      ] (cnt) at (-30mm,-35mm){Count};
 
       \node[
          circle,
@@ -71,18 +67,18 @@
          line width = 0.5mm,
          minimum height=15mm,
          minimum width=15mm,
-      ] (adder) at (-70mm,-35mm){+1};
+      ] (subber) at (-70mm,-35mm){-1};
 
 
 
-      \draw[line] (adder.north) |- (-35mm,-5mm)  |- ([yshift=0mm,xshift=-5mm]mux.north);
+      \draw[line] (subber.north) |- (-35mm,-5mm)  |- ([yshift=0mm,xshift=-5mm]mux.north);
       \draw[line] (inst.south)  |- (mux.north);
-      \draw[line] (ptr.south)   |- (-70mm,-50mm) |-(adder.south);
-      \draw[line] (data.south)  |- (-25mm,-5mm) |-([yshift=0mm,xshift=5mm]mux.north);
-      \draw[line] (mux.south)   |- (ptr.north);  
-      \draw[arrow] (adder.north) |- (ram.south);
-      \draw[line] (ram.east)    |- (-30mm,50mm) |- (inst.north);
-      \draw[line] (ram.east)    |- (10mm,50mm) |- (data.north);
+      \draw[line] (cnt.south)   |- (-70mm,-50mm) |-(subber.south);
+      \draw[line] (data.south)  |- (-25mm,-5mm)  |-([yshift=0mm,xshift=5mm]mux.north);
+      \draw[line] (mux.south)   |- (cnt.north);  
+      \draw[line] (subber.north) |- (ram.south);
+      \draw[line] (ram.east)    |- (-30mm,30mm)  |- (inst.north);
+      \draw[line] (ram.east)    |- (10mm,30mm)   |- (data.north);
 
    \end{tikzpicture}
 \end{document}

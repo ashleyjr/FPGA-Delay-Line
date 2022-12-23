@@ -1,0 +1,28 @@
+\documentclass[tikz,convert={outfile=\jobname.svg}]{standalone}
+\usepackage{tikz}
+\usepackage{pagecolor}
+\usetikzlibrary{arrows,shapes.geometric,arrows.meta,calc,chains,scopes,shapes.misc,backgrounds}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\pagecolor{white}
+
+\tikzset{ 
+   line/.style  = {-, line width=0.5mm, },
+   arrow/.style = {-latex,line width=0.5mm, },  
+}
+
+\begin{document}
+   \begin{tikzpicture} 
+     
+      \node[
+         circle,
+         draw,
+         font=\ttfamily,
+         line width = 0.5mm,
+         minimum height=20mm,
+         minimum width=20mm,
+      ] (init) at (0mm,0mm){INIT};
+
+   \end{tikzpicture}
+\end{document}
