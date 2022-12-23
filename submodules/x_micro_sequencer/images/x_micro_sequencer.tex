@@ -7,15 +7,26 @@
 \pgfsetlayers{background,main,foreground}
 \pagecolor{white}
 
-\tikzset{
-   % Single-ended arrow with latex style
+\tikzset{ 
    line/.style ={
       -, line width=0.5mm, bend angle=90, color=black,
-   }, 
+   },
+   arrow/.style ={
+      ->, line width=0.5mm, bend angle=90, color=black,
+   },  
 }
 
 \begin{document}
    \begin{tikzpicture} 
+     
+      \node[
+         rectangle,
+         draw,
+         font=\ttfamily,
+         line width = 0.5mm,
+         minimum height=20mm,
+         minimum width=20mm,
+      ] (ram) at (-70mm,50mm){RAM};
 
      \node[
          rectangle,
@@ -69,6 +80,9 @@
       \draw[line] (ptr.south)   |- (-70mm,-50mm) |-(adder.south);
       \draw[line] (data.south)  |- (-25mm,-5mm) |-([yshift=0mm,xshift=5mm]mux.north);
       \draw[line] (mux.south)   |- (ptr.north);  
+      \draw[arrow] (adder.north) |- (ram.south);
+      \draw[line] (ram.east)    |- (-30mm,50mm) |- (inst.north);
+      \draw[line] (ram.east)    |- (10mm,50mm) |- (data.north);
 
    \end{tikzpicture}
 \end{document}
