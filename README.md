@@ -7,6 +7,10 @@
    - sudo apt-get install inkscape
 
 
+   - Permission issue with convert?
+      
+      - https://stackoverflow.com/questions/52998331/imagemagick-security-policy-pdf-blocking-conversion
+
 ## Install on macOS Big Sur
 
    - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
