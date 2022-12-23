@@ -1,4 +1,6 @@
 x_micro_sequencer
 -----------------
 
-![Alt text](images/x_micro_sequencer.png "Optional title")
+
+
+![x_micro_sequencer](images/x_micro_sequencer.svg "x_micro_sequencer")
