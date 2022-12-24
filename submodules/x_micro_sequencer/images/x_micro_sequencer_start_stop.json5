@@ -2,7 +2,7 @@
 signal: [
 { name: 'i_clk',     wave: 'p..............'},
 { name: 'i_rst',     wave: '10.............'},
-{ name: 'i_start',   wave: '0.....10..10...'}, 
+{ name: 'i_start',   wave: '0.....10.10....'}, 
 { name: 'i_stop',    wave: '0.10......1....'}, 
 { name: 'o_busy',    wave: '0....1.....0...'}, 
 { name: 'o_data',    wave: '2......34562...', data: ['0', '#1', '#2', '#3', '#4', '0']},
