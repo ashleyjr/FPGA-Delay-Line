@@ -54,6 +54,9 @@ if (i_wen == 1) and (o_busy == 0) {
 - A rising edge of `i_start` will start the sequencer
 - A rising edge of `i_stop` if `o_busy` is set
 
+![x_micro_sequencer_start_stop](images/x_micro_sequencer_start_stop.svg "x_micro_sequencer_start_stop")
+
+
 ## State Machine
 
 ![x_micro_sequencer_sm](images/x_micro_sequencer_sm.svg "x_micro_sequencer")
