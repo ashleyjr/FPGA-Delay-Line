@@ -24,17 +24,6 @@
 - The RAM has 512 entries
 - This is constructed from 5 Qty 512 x 8 (4 k) FPGA BRAMs
 
-## Commands
-
-| Code   | Name | Description           |
-| ------ | ---- | --------------------- |
-| 2'b00  | SCD  | Single Cycle Data     |
-| 2'b01  | MCD  | Multiple Cycle Data   |
-| 2'b10  | DEL  | Delay                 |
-| 2'b11  | JTZ  | Jump to zero          |
-
-![x_micro_sequencer_sm](images/x_micro_sequencer_sm.svg "x_micro_sequencer")
-
 ## Write Interface
 
  - `i_wen` triggers a write
@@ -45,5 +34,28 @@ if (i_wen == 1) and (o_busy == 0) {
    RAM[i_waddr] = {i_wdata, i_wcmd}
 }
 ```
+
+## Commands
+
+| Code       | Name | Description | Detail                   |
+| ---------- | ---- | ----------- | ------------------------ |
+| 4'b0000    | DAT  | Data        | Change data output       |
+| 4'b0001    | DEL  | Delay       | Delay a number of cycles |
+| All Others | RFU  |             |                          |
+
+
+## Counter
+  
+- Capable of delaying up to 1ms at 100MHz (10^5) 
+- The counter is 17-bits wide (131071) 
+
+## Start and Stopping
+
+- A rising edge of `i_start` will start the sequencer
+- A rising edge of `i_stop` if `o_busy` is set
+
+## State Machine
+
+![x_micro_sequencer_sm](images/x_micro_sequencer_sm.svg "x_micro_sequencer")
 
 
