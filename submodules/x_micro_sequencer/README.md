@@ -24,6 +24,14 @@
 - The RAM has 512 entries
 - This is constructed from 5 Qty 512 x 8 (4 k) FPGA BRAMs
 
+## Start and Stopping
+
+- A rising edge of `i_start` will start the sequencer
+- A rising edge of `i_stop` if `o_busy` is set
+
+![x_micro_sequencer_start_stop](images/x_micro_sequencer_start_stop.svg "x_micro_sequencer_start_stop")
+
+
 ## Write Interface
 
  - `i_wen` triggers a write
@@ -34,6 +42,9 @@ if (i_wen == 1) and (o_busy == 0) {
    RAM[i_waddr] = {i_wdata, i_wcmd}
 }
 ```
+
+![x_micro_sequencer_wen](images/x_micro_sequencer_wen.svg "x_micro_sequencer_wen")
+
 
 ## Commands
 

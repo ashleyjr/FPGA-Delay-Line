@@ -1,0 +1,13 @@
+{ 
+signal: [
+
+{ name: 'i_clk',     wave: 'p...............'},
+{ name: 'i_rst',     wave: '10..............'},
+{ name: 'i_start',   wave: '0........1......'},
+{ name: 'o_busy',    wave: '0.........1.....'},
+{ name: 'i_wen',     wave: '0...10..1.0...10.'}, 
+{ name: 'i_waddr',   wave: '2...32..632...x2'}, 
+{ name: 'i_wdata',   wave: '2...42..742...x2'}, 
+{ name: 'i_wcmd',    wave: '2...52..852...x2'}, 
+],
+}
