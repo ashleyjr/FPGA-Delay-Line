@@ -1,6 +1,6 @@
 # x_micro_sequencer
 
-<img src="images/x_micro_sequencer.svg" width="250">
+<img src="images/x_micro_sequencer.svg" width="350">
 
 ## Pin Out
 
