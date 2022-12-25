@@ -1,5 +1,4 @@
 SRCS = $(shell find -type f -name '*.tex')
-PDF_OBJS = $(patsubst %.tex,%.pdf,$(SRCS))
 PNG_OBJS = $(patsubst %.tex,%.png,$(SRCS))
 SVG_OBJS = $(patsubst %.tex,%.svg,$(SRCS))
 WAVE_SRCS = $(shell find -type f -name '*.json5')
@@ -8,7 +7,7 @@ WAVE_PNG_OBJS = $(patsubst %.json5,%.png,$(WAVE_SRCS))
 
 all: $(SVG_OBJS) $(PNG_OBJS) $(WAVE_OBJS) $(WAVE_PNG_OBJS)
 
-%.pdf %.svg: %.tex 
+%.svg: %.tex 
 		cd $(dir $<) && \
 		pdflatex \
 			--interaction nonstopmode \
