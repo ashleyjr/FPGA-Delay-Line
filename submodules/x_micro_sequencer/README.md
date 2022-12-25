@@ -10,7 +10,6 @@
 | i_clk       | 1           |
 | i_rst       | 1           |
 | i_start     | 1           |
-| i_stop      | 1           |
 | o_busy      | 1           |
 | i_wen       | 1           |
 | i_wcmd      | 4           |
@@ -27,7 +26,7 @@
 ## Start and Stopping
 
 - A rising edge of `i_start` will start the sequencer
-- A rising edge of `i_stop` if `o_busy` is set
+- `o_busy` is cleared using the `END` command
 
 ![x_micro_sequencer_start_stop](images/x_micro_sequencer_start_stop.svg "x_micro_sequencer_start_stop")
 
@@ -48,25 +47,17 @@ if (i_wen == 1) and (o_busy == 0) {
 
 ## Commands
 
-| Code       | Name | Description | Detail                   |
-| ---------- | ---- | ----------- | ------------------------ |
-| 4'b0000    | DAT  | Data        | Change data output       |
-| 4'b0001    | DEL  | Delay       | Delay a number of cycles |
-| All Others | RFU  |             |                          |
-
+| Code       | Name | Detail                          |
+| ---------- | ---- | ------------------------------- |
+| 4'b0000    | DAT  | Change data output              |
+| 4'b0001    | DEL  | Delay a number of cycles        |
+| 4'b0010    | END  | End sequence with zero          |
+| All Others | RFU  |                                 |
 
 ## Counter
   
 - Capable of delaying up to 1ms at 100MHz (10^5) 
 - The counter is 17-bits wide (131071) 
-
-## Start and Stopping
-
-- A rising edge of `i_start` will start the sequencer
-- A rising edge of `i_stop` if `o_busy` is set
-
-![x_micro_sequencer_start_stop](images/x_micro_sequencer_start_stop.svg "x_micro_sequencer_start_stop")
-
 
 ## State Machine
 
