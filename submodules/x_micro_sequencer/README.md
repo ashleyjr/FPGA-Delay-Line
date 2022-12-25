@@ -42,6 +42,8 @@ if (i_wen == 1) and (o_busy == 0) {
 }
 ```
 
+ - ``
+
 ![x_micro_sequencer_wen](images/x_micro_sequencer_wen.svg "x_micro_sequencer_wen")
 
 
