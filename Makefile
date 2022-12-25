@@ -19,8 +19,8 @@ $(PDF_OBJS) $(SVG_OBJS): $(SRCS)
 $(PNG_OBJS): $(PDF_OBJS)
 		inkscape --without-gui -d 100 -e $@ $<
 
-$(WAVE_OBJS) : $(WAVE_SRCS)
-		wavedrom-cli -i $< -s $@
+%.svg : %.json5
+		wavedrom-cli -s $@ -i $<
 
 clean:
 		rm -rf $(SVG_OBJS)
