@@ -1,7 +1,6 @@
 # x_micro_sequencer
 
-
-<img src="images/x_micro_sequencer.svg" width="100">
+<img src="images/x_micro_sequencer.svg" width="250">
 
 ## Pin Out
 
@@ -63,6 +62,6 @@ if (i_wen == 1) and (o_busy == 0) {
 
 ## State Machine
 
-![x_micro_sequencer_sm](images/x_micro_sequencer_sm.svg "x_micro_sequencer")
+<img src="images/x_micro_sequencer_sm.svg" width="250">
 
 
