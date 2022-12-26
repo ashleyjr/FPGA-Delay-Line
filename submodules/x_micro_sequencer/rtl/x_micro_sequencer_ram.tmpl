@@ -8,27 +8,7 @@ module x_micro_sequencer_ram (
    output   logic [39:0]   o_rdata
 );
 
-   `ifdef SYNTH  
-      
-+for i in range(5):    
-      SB_RAM40_4K #(
-         .WRITE_MODE (32'sd0                       ),
-         .READ_MODE  (32'sd0                       )
-      ) u_ram@i@ (
-         .MASK       (16'hxxxx                     ),
-         .RDATA      (o_rdata[@((i+1)*8)-1@:@i*8@] ),
-         .RADDR      (i_raddr                      ),
-         .RCLK       (i_clk                        ),
-         .RCLKE      (1'b1                         ),
-         .RE         (1'b1                         ),
-         .WADDR      (i_waddr                      ),
-         .WCLK       (i_clk                        ),
-         .WCLKE      (1'b1                         ),
-         .WDATA      (i_wdata[@((i+1)*8)-1@:@i*8@] ),
-         .WE         (i_wen                        )
-      );
--
-   `else 
+`ifdef SIM 
       logic [39:0] mem_q [511:0];
 
       // Write data
@@ -50,7 +30,60 @@ module x_micro_sequencer_ram (
          else        o_rdata <= mem_q[i_raddr];
       end      
 
-   `endif
+`else
+
++for i in range(5):    
+      
+      logic [15:0] rdata@i@;
+      logic [15:0] wdata@i@;
+   
+      assign wdata@i@ = {
+         1'bx,
+         i_wdata[@i*8@+7],
+         1'bx,
+         i_wdata[@i*8@+6],
+         1'bx,
+         i_wdata[@i*8@+5],
+         1'bx,
+         i_wdata[@i*8@+4],
+         1'bx,
+         i_wdata[@i*8@+3],
+         1'bx,
+         i_wdata[@i*8@+2],
+         1'bx,
+         i_wdata[@i*8@+1],
+         1'bx,
+         i_wdata[@i*8@]
+      };
+    
+      assign o_rdata[@((i+1)*8)-1@:@i*8@] = {
+         rdata@i@[14],
+         rdata@i@[12],
+         rdata@i@[10],
+         rdata@i@[8],
+         rdata@i@[6],
+         rdata@i@[4],
+         rdata@i@[2],
+         rdata@i@[0]
+      };  
+
+      SB_RAM40_4K #(
+         .WRITE_MODE (32'sd1   ),
+         .READ_MODE  (32'sd1   )
+      ) u_ram@i@ ( 
+         .RDATA      (rdata@i@ ),
+         .RADDR      (i_raddr  ),
+         .RCLK       (i_clk    ),
+         .RCLKE      (1'b1     ),
+         .RE         (1'b1     ),
+         .WADDR      (i_waddr  ),
+         .WCLK       (i_clk    ),
+         .WCLKE      (1'b1     ),
+         .WDATA      (wdata@i@ ),
+         .WE         (i_wen    )
+      );
+-
+`endif
 
 endmodule
 
