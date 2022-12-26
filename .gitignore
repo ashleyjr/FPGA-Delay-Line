@@ -1,5 +1,7 @@
-
 *.png
 *.aux
 *.log
 *.pdf
+*.vcd
+*obj_dir*
+submodules/x_micro_sequencer/rtl/x_micro_sequencer_ram.sv 

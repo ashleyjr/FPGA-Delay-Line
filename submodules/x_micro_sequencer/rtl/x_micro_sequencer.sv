@@ -13,6 +13,11 @@ module x_micro_sequencer (
    assign o_busy = 1'd0;
    assign o_data = 36'd0;
 
+
+   x_micro_sequencer_ram u_ram(
+      
+   );
+
 endmodule
 
 
