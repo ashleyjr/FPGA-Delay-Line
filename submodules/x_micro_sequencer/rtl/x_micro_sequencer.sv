@@ -15,7 +15,6 @@ module x_micro_sequencer (
    logic [3:0]    rcmd;
 
    assign o_busy = 1'd0;
-   assign o_data = 36'd0;
    assign raddr  = i_waddr;
 
    assign o_data = rdata | rcmd;
