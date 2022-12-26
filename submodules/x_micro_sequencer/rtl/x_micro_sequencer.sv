@@ -18,7 +18,7 @@ module x_micro_sequencer (
    assign o_data = 36'd0;
    assign raddr  = i_waddr;
 
-   assign o_data = rdata;
+   assign o_data = rdata | rcmd;
 
    x_micro_sequencer_ram u_ram(
       .i_clk      (i_clk            ),

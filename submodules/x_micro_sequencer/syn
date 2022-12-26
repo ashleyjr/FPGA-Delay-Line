@@ -1,6 +1,0 @@
-#!/bin/bash
-echo "========================================================"
-echo "Running synth..."
-rm -f syn.log
-yosys -p 'synth_ice40 -top  x_micro_sequencer -blif a.blif -json a.json' rtl/x_micro_sequencer.sv rtl/x_micro_sequencer_ram.sv > syn.log
-cat syn.log | grep -A30 statistics
