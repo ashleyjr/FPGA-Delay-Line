@@ -2,6 +2,7 @@
 
 verilator --trace \
    --cc rtl/x_micro_sequencer.sv \
+   --cc rtl/x_micro_sequencer_ram.sv \
    --exe verif/x_micro_sequencer_tb.cpp \
 
 make -C obj_dir -f Vx_micro_sequencer.mk Vx_micro_sequencer

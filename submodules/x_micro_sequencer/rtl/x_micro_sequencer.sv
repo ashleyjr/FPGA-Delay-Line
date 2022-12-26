@@ -10,12 +10,22 @@ module x_micro_sequencer (
    output   logic [35:0]   o_data
 );
 
+   logic [8:0]    raddr;
+   logic [35:0]   rdata;
+   logic [3:0]    rcmd;
+
    assign o_busy = 1'd0;
    assign o_data = 36'd0;
-
+   assign raddr  = 9'd0;
 
    x_micro_sequencer_ram u_ram(
-      
+      .i_clk      (i_clk            ),
+      .i_rst      (i_rst            ), 
+      .i_wen      (i_wen            ), 
+      .i_waddr    (i_waddr          ),
+      .i_wdata    ({i_wdata, i_wcmd}),
+      .i_raddr    (raddr            ),
+      .o_rdata    ({rdata, rcmd}    )
    );
 
 endmodule

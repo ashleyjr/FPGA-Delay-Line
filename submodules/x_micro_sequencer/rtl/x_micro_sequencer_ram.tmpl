@@ -1,7 +1,6 @@
 module x_micro_sequencer_ram (
    input    logic          i_clk,
-   input    logic          i_rst,
-   input    logic          i_addr,
+   input    logic          i_rst, 
    input    logic          i_wen, 
    input    logic [8:0]    i_waddr,
    input    logic [39:0]   i_wdata,
@@ -30,7 +29,7 @@ module x_micro_sequencer_ram (
       );
 -
    `else 
-      logic [39:0] mem_q [511:0]
+      logic [39:0] mem_q [511:0];
 
       // Write data
       generate
@@ -38,7 +37,7 @@ module x_micro_sequencer_ram (
             
             logic wen = i_wen & (i_waddr == i);
 
-            always_ff@(posedge i_clk or negedge i_nrst) begin
+            always_ff@(posedge i_clk or posedge i_rst) begin
                if(i_rst)      mem_q[i] <= 40'd0;
                else if(wen)   mem_q[i] <= i_wdata;
             end 
@@ -46,9 +45,9 @@ module x_micro_sequencer_ram (
       endgenerate
 
       // Read data 
-      always_ff@(posedge i_clk or negedge i_nrst) begin
-         if(i_rst)      o_rdata <= 40'd0;
-         else if(i_ren) o_rdata <= mem_q[i_raddr];
+      always_ff@(posedge i_clk or posedge i_rst) begin
+         if(i_rst)   o_rdata <= 40'd0;
+         else        o_rdata <= mem_q[i_raddr];
       end      
 
    `endif
