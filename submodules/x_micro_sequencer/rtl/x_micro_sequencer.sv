@@ -19,11 +19,15 @@ module x_micro_sequencer (
    localparam CMD_DEL = 4'b0001;
    localparam CMD_END = 4'b0010;
 
+   logic [39:0]   wdata;
    logic          ren_d;
    logic          ren_q;
    logic [8:0]    raddr;
    logic [39:0]   rdata;
    logic [3:0]    rcmd;
+
+   logic          start_q;
+   logic          start;
 
    logic [35:0]   data_d;
    logic [35:0]   data_q;
@@ -32,7 +36,8 @@ module x_micro_sequencer (
    logic [16:0]   delay_d;
    logic [16:0]   delay_q;
    logic          delay_en;
-  
+    
+   logic [1:0]    sm_cmd; 
    logic [1:0]    sm_d;
    logic [1:0]    sm_q; 
    
@@ -41,6 +46,8 @@ module x_micro_sequencer (
    logic          ptr_en;
 
    // RAM
+   assign wdata = {i_wdata,i_wcmd};
+
    x_micro_sequencer_ram u_ram(
       .i_clk      (i_clk            ),
       .i_rst      (i_rst            ), 
@@ -54,19 +61,31 @@ module x_micro_sequencer (
 
    assign rcmd = rdata[3:0];
   
-   assign ren_d = ((sm_q == SM_INIT) & i_start) | 
-                  (sm_q == SM_DATA) |
-                  ((sm_q == SM_DELAY) & (ptr_q == 'd1)) |
-                  ((sm_q == SM_PIPE) & (rcmd == CMD_DAT));
+   assign ren_d = (sm_d != SM_INIT) & (
+                     ((sm_q == SM_INIT) & start) |  
+                     ((sm_q == SM_DELAY) & (delay_q <= 'd1)) |
+                     (  
+                        ((sm_q == SM_PIPE) | (sm_q == SM_DATA)) & 
+                        ((rcmd != CMD_DEL) | (data_d == 'd0))
+                     )
+                  );
     
    always_ff@(posedge i_clk or posedge i_rst) begin
       if(i_rst)   ren_q <= 'd0;
       else        ren_q <= ren_d;
    end 
 
+   // Start 
+   assign start = i_start & ~start_q;
+
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)   start_q <= 'd0;
+      else        start_q <= i_start;
+   end
+ 
    // Buffer output data
-   assign data_d  = rdata[39:4];
-   assign data_en = ren_q & (rcmd == CMD_DAT); 
+   assign data_d  = (sm_d == SM_INIT) ? 'd0 : rdata[39:4];
+   assign data_en = (sm_d == SM_INIT) | (ren_q & (rcmd == CMD_DAT)); 
 
    always_ff@(posedge i_clk or posedge i_rst) begin
       if(i_rst)         o_data <= 'd0;
@@ -76,7 +95,7 @@ module x_micro_sequencer (
    // Pointer
 
    assign ptr_d  = (rcmd == CMD_END) ? 9'd0 : (ptr_q + 'd1);
-   assign ptr_en = ren_d;
+   assign ptr_en = ren_d | (ren_q & (rcmd == CMD_END));
 
    always_ff@(posedge i_clk or posedge i_rst) begin
       if(i_rst)         ptr_q <= 'd0;
@@ -85,7 +104,7 @@ module x_micro_sequencer (
 
    // Delay counter
 
-   assign delay_d  = (rcmd == CMD_DEL) ? rdata[20:4] : (delay_q - 'd1);
+   assign delay_d  = (sm_q == SM_DELAY) ? (delay_q - 'd1) : rdata[20:4];
    assign delay_en = (rcmd == CMD_DEL) | (delay_q != 0);
 
    always_ff@(posedge i_clk or posedge i_rst) begin
@@ -98,17 +117,24 @@ module x_micro_sequencer (
    
    // State Machine   
    always_comb begin
+      sm_cmd = SM_INIT;
+      unique case(rcmd)
+         CMD_DEL:  sm_cmd = SM_DELAY; 
+         CMD_DAT:  sm_cmd = SM_DATA;
+         CMD_END:  sm_cmd = SM_INIT;
+         default:;
+      endcase
+   end
+
+   always_comb begin
       sm_d = SM_INIT;
       unique case(sm_q)
-         SM_INIT:    if(i_start) 
-                        sm_d = SM_PIPE;     
+         SM_INIT:    if(start)            sm_d = SM_PIPE;     
          SM_PIPE,    
-         SM_DATA,
-         SM_DELAY:   begin
-                        if(rcmd == CMD_DEL)  sm_d = SM_DELAY; 
-                        if(rcmd == CMD_DAT)  sm_d = SM_DATA;
-                        if(rcmd == CMD_END)  sm_d = SM_INIT;  
-                     end
+         SM_DATA:                         sm_d = sm_cmd;
+         SM_DELAY:   if(delay_q == 'd0)   sm_d = sm_cmd;
+                     else                 sm_d = SM_DELAY;
+ 
          default:;
       endcase 
    end
