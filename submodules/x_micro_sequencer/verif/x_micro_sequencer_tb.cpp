@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <iostream>
+#include <cstdlib>
 #include <verilated.h>
 #include <verilated_vcd_c.h>
 #include "Vx_micro_sequencer.h"
@@ -152,7 +153,49 @@ int main(int argc, char** argv, char** env) {
          dut->i_wen   = 0;
       }
 
+      // Pattern 5
+      if(1001 == sim_time){
+         dut->i_start = 0;
+         dut->i_wen   = 1;
+         dut->i_waddr = 0;
+         dut->i_wdata = 0xFFFFFFFFF; // Data
+         dut->i_wcmd  = 0;
+      }  
+      if(1003 == sim_time){
+         dut->i_waddr = 1;
+         dut->i_wdata = 0x0000000AA; // Delay
+         dut->i_wcmd  = 1;
+      } 
+      if(1005 == sim_time){
+         dut->i_waddr = 2;
+         dut->i_wdata = 0x0000000AA; // Delay
+         dut->i_wcmd  = 1;
+      } 
+      if(1007 == sim_time){
+         dut->i_wen   = 1;
+         dut->i_waddr = 3;
+         dut->i_wdata = 0x000000000; // End
+         dut->i_wcmd  = 2;
+      }
+      if(1015 == sim_time){
+         dut->i_start = 1;
+         dut->i_wen   = 0;
+      }
 
+      // Pattern 6
+      for(int i=2001;i<3025;i+=2){
+         if(i == sim_time){ 
+            dut->i_start = 0;
+            dut->i_wen   = 1;
+            dut->i_waddr = (i-2001) >> 1;
+            dut->i_wdata = ((uint64_t)(rand()) << 32) | ((uint64_t)(rand())); // Data
+            dut->i_wcmd  = 0;
+         }
+      }
+      if(4001 == sim_time){
+         dut->i_start = 1;
+         dut->i_wen   = 0;
+      }
 
       dut->eval();
       m_trace->dump(sim_time);
