@@ -1,0 +1,10 @@
+#!/bin/bash
+
+verilator --trace \
+   --cc rtl/x_byte_des.sv \
+   --exe verif/x_byte_des_tb.cpp \
+   +define+SIM
+
+make -C obj_dir -f Vx_byte_des.mk Vx_byte_des
+
+./obj_dir/Vx_byte_des
