@@ -1,0 +1,12 @@
+set_io i_clk         J3
+set_io i_rst         D16
+set_io o_out         P10
+set_io i_in0         P11
+set_io i_in1         P12
+set_io i_in2         P13
+set_io i_in3         P14
+set_io i_in4         P15
+set_io i_in5         P16
+set_io i_in6         D11
+set_io i_in7         D9
+set_io i_in8         D10
