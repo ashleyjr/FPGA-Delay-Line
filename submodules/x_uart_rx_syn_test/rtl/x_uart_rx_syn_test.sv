@@ -11,7 +11,7 @@ module x_uart_rx_syn_test (
    assign o_out = ^({valid, data});
 
    x_uart_rx u_rx(
-      i_clk       (i_clk   ),
+      .i_clk      (i_clk   ),
       .i_rst      (i_rst   ),
       .i_rx       (i_in    ),
       .o_valid    (valid   ),    
