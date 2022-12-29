@@ -1,3 +1,7 @@
+*.asc
+*.blif
+*.time
+*.json
 *.png
 *.aux
 *.log
