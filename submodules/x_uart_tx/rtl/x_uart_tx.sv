@@ -3,7 +3,7 @@ module x_uart_tx#(
    p_baud   = 115200
 )(
    input    logic       i_clk,
-   input    logic       i_nrst,
+   input    logic       i_rst,
    input    logic [7:0] i_data,
    output   logic       o_tx,
    input    logic       i_valid,
@@ -37,8 +37,8 @@ module x_uart_tx#(
    assign timer_d    = (timer_top) ? 'd0 : timer_inc; 
    assign timer_en   = (sm_uart_q != IDLE_0);
 
-   always_ff@(posedge i_clk or negedge i_nrst) begin
-      if(!i_nrst)       timer_q <= 'd0;
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)         timer_q <= 'd0;
       else if(timer_en) timer_q <= timer_d;
    end
    
@@ -49,8 +49,8 @@ module x_uart_tx#(
    assign sm_uart_d   = (sm_uart_q == STOP    ) ? IDLE_0  : sm_uart_inc;
    assign sm_uart_en  = (sm_uart_q == IDLE_0) ? i_valid : timer_top; 
  
-   always_ff@(posedge i_clk or negedge i_nrst) begin
-      if(!i_nrst)          sm_uart_q <= IDLE_0;
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)            sm_uart_q <= IDLE_0;
       else if(sm_uart_en)  sm_uart_q <= sm_uart_d;
    end
   
