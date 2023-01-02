@@ -1,0 +1,15 @@
+#!/bin/bash
+echo "========================================================"
+echo "Running synth..."
+rm -f syn.log
+yosys -p 'synth_ice40 -top x_micro_scope_syn_test -blif a.blif -json a.json' rtl/x_micro_scope_syn_test.sv ../x_micro_scope/rtl/x_micro_scope.sv ../x_micro_scope/rtl/x_micro_scope_ram.sv > syn.log
+cat syn.log | grep -A30 statistics
+echo "========================================================"
+echo "Running place and route..."
+rm -f pnr.log
+nextpnr-ice40 --hx8k --json a.json --package ct256 --pcf etc/x_micro_scope_syn_test.pcf --asc a.asc &> pnr.log
+cat pnr.log | grep -A6 "Device utilisation"
+echo "========================================================"
+echo "Running Timing check..."
+icetime -d hx8k a.asc > a.time
+cat a.time
