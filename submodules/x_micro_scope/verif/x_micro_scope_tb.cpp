@@ -35,7 +35,7 @@ int main(int argc, char** argv, char** env) {
       }
 
       if((sim_time > REC) && ((sim_time % 2) == 1)){
-         dut->i_raddr = (uint32_t)(rand());
+         dut->i_raddr = (uint32_t)(rand() % 0x800);
          dut->i_ren   = rand() % 2;
       }
 
