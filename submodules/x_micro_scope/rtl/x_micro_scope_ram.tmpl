@@ -1,0 +1,74 @@
+module x_micro_scope_ram (
+   input    logic          i_clk,
+   input    logic          i_rst, 
+   input    logic          i_wen, 
+   input    logic [10:0]   i_waddr,
+   input    logic [31:0]   i_wdata,
+   input    logic          i_ren,
+   input    logic [10:0]   i_raddr,
+   output   logic [31:0]   o_rdata
+);
+
+`ifdef SIM 
+      logic [31:0] mem_q [2047:0];
+
+      // Write data
+      generate
+         for(genvar i=0;i<2048;i++) begin
+            
+            logic wen = i_wen & (i_waddr == i);
+
+            always_ff@(posedge i_clk or posedge i_rst) begin
+               if(i_rst)      mem_q[i] <= 32'd0;
+               else if(wen)   mem_q[i] <= i_wdata;
+            end 
+         end
+      endgenerate
+
+      // Read data 
+      always_ff@(posedge i_clk or posedge i_rst) begin
+         if(i_rst)      o_rdata <= 32'd0;
+         else if(i_ren) o_rdata <= mem_q[i_raddr];
+      end      
+
+`else
+
++for i in range(16):    
+      
+      logic [15:0] rdata@i@;
+      logic [15:0] wdata@i@;
+   
+      assign wdata@i@ = { 
+         4'bxxxx,
+         i_wdata[@i*2@+1], // 11
+         8'bxxxxxxxx,
+         i_wdata[@i*2@],   // 3
+         2'bxx
+      };
+    
+      assign o_rdata[@((i+1)*2)-1@:@i*2@] = {
+         rdata@i@[11],
+         rdata@i@[3]
+      };  
+
+      SB_RAM40_4K #(
+         .WRITE_MODE (32'sd3   ),
+         .READ_MODE  (32'sd3   )
+      ) u_ram@i@ ( 
+         .RDATA      (rdata@i@ ),
+         .RADDR      (i_raddr  ),
+         .RCLK       (i_clk    ),
+         .RCLKE      (1'b1     ),
+         .RE         (i_ren    ),
+         .WADDR      (i_waddr  ),
+         .WCLK       (i_clk    ),
+         .WCLKE      (1'b1     ),
+         .WDATA      (wdata@i@ ),
+         .WE         (i_wen    )
+      );
+-
+`endif
+
+endmodule
+
+
