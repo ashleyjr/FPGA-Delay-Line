@@ -29,8 +29,12 @@ module x_dummy (
    logic [31:0]   scope_rdata;
 
    logic [7:0]    tx_data;
-   logic          tx_valid;
+   logic          tx_valid_d;
+   logic          tx_valid_q;
    logic          tx_accept;
+
+   logic [2:0]    mux_d;
+   logic [2:0]    mux_q;
 
    x_uart_rx u_rx (
       .i_clk      (i_clk         ),
@@ -77,7 +81,7 @@ module x_dummy (
       .i_rst      (i_rst         ), 
       .i_data     (tx_data       ),
       .o_tx       (o_tx          ),
-      .i_valid    (tx_valid      ),
+      .i_valid    (tx_valid_q    ),
       .o_accept   (tx_accept     )
    );
  
@@ -96,12 +100,26 @@ module x_dummy (
    assign scope_ren   = des_data[48];
    assign scope_raddr = des_data[59:49];
 
-   assign tx_valid = des_data[60];
+   assign tx_valid_d = des_data[60];
    
+   assign mux_d = des_data[63:61];
+
+   // Delay valid a cycle for read latency
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)   tx_valid_q <= 'd0;
+      else        tx_valid_q <= tx_valid_d;
+   end
+ 
+   // Delay mux control for read latency
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)            mux_q <= 'd0;
+      else if(tx_valid_d)  mux_q <= mux_d;
+   end
+ 
    // Muxing
    always_comb begin
       tx_data = 8'hAA;
-      unique case(des_data[63:61]) 
+      unique case(mux_q) 
          3'b000: tx_data = scope_rdata[7:0];
          3'b001: tx_data = scope_rdata[15:8];
          3'b010: tx_data = scope_rdata[23:16];
