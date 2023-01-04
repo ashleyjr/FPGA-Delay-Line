@@ -36,6 +36,9 @@ module x_dummy (
    logic [2:0]    mux_d;
    logic [2:0]    mux_q;
 
+   logic [63:0]   loopback_d;
+   logic [63:0]   loopback_q;
+
    x_uart_rx u_rx (
       .i_clk      (i_clk         ),
       .i_rst      (i_rst         ),
@@ -116,14 +119,26 @@ module x_dummy (
       else if(tx_valid_d)  mux_q <= mux_d;
    end
  
+   // Delay mux control for read latency
+   assign loopback_d = des_data[31:0];
+
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)            loopback_q <= 'd0;
+      else if(tx_valid_d)  loopback_q <= loopback_d;
+   end
+   
    // Muxing
    always_comb begin
-      tx_data = 8'hAA;
+      tx_data = scope_rdata[7:0];
       unique case(mux_q) 
          3'b000: tx_data = scope_rdata[7:0];
          3'b001: tx_data = scope_rdata[15:8];
          3'b010: tx_data = scope_rdata[23:16];
          3'b011: tx_data = scope_rdata[31:24];
+         3'b100: tx_data = loopback_q[7:0];
+         3'b101: tx_data = loopback_q[15:8];
+         3'b110: tx_data = loopback_q[23:16];
+         3'b111: tx_data = loopback_q[31:24];
          default:;
       endcase
    end

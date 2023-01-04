@@ -117,6 +117,15 @@ int main(int argc, char** argv, char** env) {
    dut->i_rst = 0;
    ticks(100);
 
+   // Test UART loopback
+   for(uint16_t i=0;i<4;i++){
+      uint64_t d = 0x10000000DEADBEEF;
+      d |= i << 61;
+      load(d,0);
+      printf("Loopback %x: %x\n\r", i, uart_rx());
+   }
+
+   // Sequence
    write_seq_cmd(0, 0xDEADBEEF, 0);
    write_seq_cmd(0, 0xAAAAAAAA, 1);
    write_seq_cmd(1, 0x00000003, 2);
@@ -125,7 +134,7 @@ int main(int argc, char** argv, char** env) {
    seq_scope_start();
 
 
-   for(uint16_t i;i<12;i++){
+   for(uint16_t i=0;i<12;i++){
       printf("Scope %x: %x\n\r", i, unload_scope(i));
    }
    
