@@ -11,6 +11,7 @@ yosys -p 'synth_ice40 -top x_dummy -blif a.blif -json a.json'\
    ../../submodules/x_micro_sequencer/rtl/x_micro_sequencer_ram.sv \
    ../../submodules/x_uart_rx/rtl/x_uart_rx.sv \
    ../../submodules/x_uart_tx/rtl/x_uart_tx.sv \
+   ../../submodules/x_mem/rtl/x_mem.sv \
    > syn.log
 cat syn.log | grep -A30 statistics
 echo "========================================================"

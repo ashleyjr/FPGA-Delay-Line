@@ -13,8 +13,11 @@ module x_micro_scope (
    logic [10:0]   waddr_d;
    logic [10:0]   waddr_q;
 
-   logic          ren;
-
+   logic [31:0]   rdata_d;
+   logic [31:0]   rdata_q;
+   logic          ren_d;
+   logic          ren_q;
+   
    // Drive busy logic   
    assign o_busy = (waddr_q > 'd0);
 
@@ -29,7 +32,7 @@ module x_micro_scope (
    end
  
    // RAM 
-   assign ren = i_ren & ~o_busy;
+   assign ren_d = i_ren & ~o_busy;
 
    x_micro_scope_ram u_ram(
       .i_clk      (i_clk      ),
@@ -37,10 +40,24 @@ module x_micro_scope (
       .i_wen      (waddr_en   ), 
       .i_waddr    (waddr_q    ),
       .i_wdata    (i_data     ),
-      .i_ren      (ren        ),
+      .i_ren      (ren_d      ),
       .i_raddr    (i_raddr    ),
-      .o_rdata    (o_data     )
+      .o_rdata    (rdata_d    )
    );
+
+   // Hold data on output
+    
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)   ren_q <= 'd0;
+      else        ren_q <= ren_d;
+   end
+
+   assign o_data = (ren_q) ? rdata_d : rdata_q;
+
+   always_ff@(posedge i_clk or posedge i_rst) begin
+      if(i_rst)      rdata_q <= 'd0;
+      else if(ren_q) rdata_q <= rdata_d;
+   end
  
 endmodule
 

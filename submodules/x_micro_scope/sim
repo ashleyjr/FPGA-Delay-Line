@@ -3,6 +3,7 @@
 verilator --trace \
    --cc rtl/x_micro_scope.sv \
    --cc rtl/x_micro_scope_ram.sv \
+   --cc ../x_mem/rtl/x_mem.sv \
    --exe verif/x_micro_scope_tb.cpp \
    +define+SIM
 

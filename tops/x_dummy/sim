@@ -9,6 +9,7 @@ verilator --trace \
    --cc ../../submodules/x_micro_sequencer/rtl/x_micro_sequencer_ram.sv \
    --cc ../../submodules/x_uart_rx/rtl/x_uart_rx.sv \
    --cc ../../submodules/x_uart_tx/rtl/x_uart_tx.sv \
+   --cc ../../submodules/x_mem/rtl/x_mem.sv \
    --exe verif/x_dummy_tb.cpp \
    +define+SIM
 
