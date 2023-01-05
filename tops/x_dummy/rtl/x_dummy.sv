@@ -36,8 +36,8 @@ module x_dummy (
    logic [2:0]    mux_d;
    logic [2:0]    mux_q;
 
-   logic [63:0]   loopback_d;
-   logic [63:0]   loopback_q;
+   logic [31:0]   loopback_d;
+   logic [31:0]   loopback_q;
 
    x_uart_rx u_rx (
       .i_clk      (i_clk         ),

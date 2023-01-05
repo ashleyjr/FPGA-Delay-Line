@@ -118,9 +118,9 @@ int main(int argc, char** argv, char** env) {
    ticks(100);
 
    // Test UART loopback
-   for(uint16_t i=0;i<4;i++){
+   for(uint16_t i=4;i<8;i++){
       uint64_t d = 0x10000000DEADBEEF;
-      d |= i << 61;
+      d |= ((uint64_t)i) << 61;
       load(d,0);
       printf("Loopback %x: %x\n\r", i, uart_rx());
    }

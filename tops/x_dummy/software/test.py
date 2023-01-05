@@ -6,7 +6,7 @@ for port, desc, hwid in sorted(ports):
     print("{}: {} [{}]".format(port, desc, hwid))
 
 ser = serial.Serial(
-    port='/dev/ttyUSB1',
+    port='/dev/ttyUSB2',
     baudrate=115200,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -23,6 +23,7 @@ def put(tx):
     ser.write(tx.to_bytes(1, byteorder='big'))
 
 def load(a,b):
+    #print(hex(a))
     for i in range(0,64,4):
         nibble = a >> (60-i)
         nibble &= 0xF
@@ -35,12 +36,38 @@ def load(a,b):
     put(0x20)
 
 
-load(0x90000000DEADBEEF,0x0)
-print(hex(get()))
-load(0xB0000000DEADBEEF,0x0)
-print(hex(get()))
-load(0xD0000000DEADBEEF,0x0)
-print(hex(get()))
-load(0xF0000000DEADBEEF,0x0)
-print(hex(get()))
+def write_seq_cmd(cmd, data, addr):
+    i = data;
+    i |= (cmd << 32)
+    i |= (1 << 37)
+    i |= (addr << 38)
+    load(i,0)
+
+def seq_scope_start():
+    i  = (1 << 36)
+    i |= (1 << 47)
+    load(i,0)
+
+def unload_scope(addr):
+    rx = 0
+    for i in range(3,-1,-1):
+        rx <<= 8
+        d  = (addr << 49)
+        d |= (1 << 48)
+        d |= (1 << 60)
+        d |= (i << 61)
+        load(d,0)
+        rx |= get()
+    return rx
+
+
+write_seq_cmd(0, 0xDEADBEEF, 0)
+write_seq_cmd(0, 0xAAAAAAAA, 1)
+write_seq_cmd(0, 0xDEADBEEF, 2)
+write_seq_cmd(1, 0x00000000, 3)
+write_seq_cmd(2, 0xFFFFFFFF, 4)
+seq_scope_start()
+
+for i in range(10):
+    print("Scope "+str(hex(i))+":"+str(hex(unload_scope(i))))
 
