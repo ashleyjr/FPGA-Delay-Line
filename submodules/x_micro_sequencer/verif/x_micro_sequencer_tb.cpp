@@ -5,7 +5,7 @@
 #include <verilated_vcd_c.h>
 #include "Vx_micro_sequencer.h"
 
-#define MAX_SIM_TIME 10000
+#define MAX_SIM_TIME 20000
 vluint64_t sim_time = 0;
 
 int main(int argc, char** argv, char** env) {
@@ -196,6 +196,22 @@ int main(int argc, char** argv, char** env) {
          dut->i_start = 1;
          dut->i_wen   = 0;
       }
+      
+      // Pattern 6
+      for(int i=6001;i<7025;i+=2){
+         if(i == sim_time){ 
+            dut->i_start = 0;
+            dut->i_wen   = 1;
+            dut->i_waddr = (i-6001) >> 1;
+            dut->i_wdata = (i-6001) >> 1;
+            dut->i_wcmd  = 0;
+         }
+      }
+      if(8001 == sim_time){
+         dut->i_start = 1;
+         dut->i_wen   = 0;
+      }
+
 
       dut->eval();
       m_trace->dump(sim_time);
