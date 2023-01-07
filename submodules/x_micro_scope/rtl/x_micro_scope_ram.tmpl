@@ -69,7 +69,7 @@ module x_micro_scope_ram (
       o_rdata = 'd0;
       case(raddr_i_q)
 +for i in range(8):    
-         'd0: o_rdata = rdata_@i@;
+         'd@i@: o_rdata = rdata_@i@;
 -
       endcase
    end

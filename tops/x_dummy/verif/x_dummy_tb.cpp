@@ -125,16 +125,15 @@ int main(int argc, char** argv, char** env) {
       printf("Loopback %x: %x\n\r", i, uart_rx());
    }
 
-   // Sequence
-   write_seq_cmd(0, 0xDEADBEEF, 0);
-   write_seq_cmd(0, 0xAAAAAAAA, 1);
-   write_seq_cmd(1, 0x00000003, 2);
-   write_seq_cmd(2, 0xFFFFFFFF, 3);
+   // Sequence 
+   for(uint32_t i=0;i<512;i++){
+      write_seq_cmd(0, i, i); 
+      printf("Write seq %x: %x\n\r", i, i);
+   }  
    
    seq_scope_start();
 
-
-   for(uint16_t i=0;i<12;i++){
+   for(uint16_t i=0;i<512;i++){
       printf("Scope %x: %x\n\r", i, unload_scope(i));
    }
    
