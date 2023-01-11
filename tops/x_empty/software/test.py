@@ -6,7 +6,7 @@ for port, desc, hwid in sorted(ports):
     print("{}: {} [{}]".format(port, desc, hwid))
 
 ser = serial.Serial(
-    port='/dev/ttyUSB2',
+    port='/dev/ttyUSB1',
     baudrate=115200,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -63,7 +63,7 @@ def unload_scope(addr):
 
 for i in range(512):
     write_seq_cmd(0, i, i)
-write_seq_cmd(2, 0xFFFFFFFF, 256)
+write_seq_cmd(2, 0xFFFFFFFF, 511)
 
 seq_scope_start()
 
