@@ -1,2 +1,0 @@
-#!/bin/bash
-nextpnr-ice40 --hx8k --json a.json --package ct256 --pcf etc/x_dummy.pcf --asc a.asc --gui
