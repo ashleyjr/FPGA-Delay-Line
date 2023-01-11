@@ -1,0 +1,18 @@
+#!/bin/bash
+
+verilator --trace \
+   --cc rtl/x_testbench.sv \
+   --cc ../x_byte_des/rtl/x_byte_des.sv \
+   --cc ../x_micro_scope/rtl/x_micro_scope.sv \
+   --cc ../x_micro_scope/rtl/x_micro_scope_ram.sv \
+   --cc ../x_micro_sequencer/rtl/x_micro_sequencer.sv \
+   --cc ../x_micro_sequencer/rtl/x_micro_sequencer_ram.sv \
+   --cc ../x_uart_rx/rtl/x_uart_rx.sv \
+   --cc ../x_uart_tx/rtl/x_uart_tx.sv \
+   --cc ../x_mem/rtl/x_mem.sv \
+   --exe verif/x_testbench_tb.cpp \
+   +define+SIM
+
+make -C obj_dir -f Vx_testbench.mk Vx_testbench
+
+./obj_dir/Vx_testbench
