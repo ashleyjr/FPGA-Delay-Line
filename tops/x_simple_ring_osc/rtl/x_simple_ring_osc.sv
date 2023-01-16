@@ -5,7 +5,8 @@ module x_simple_ring_osc (
    output   logic    o_tx
 );
  
-   logic [31:0] ctrl;  
+   logic [31:0] ctrl;
+   logic [63:0] dl;
    logic [31:0] data;
 
    x_testbench u_testbench(
@@ -16,9 +17,14 @@ module x_simple_ring_osc (
       .o_data  (ctrl    ),
       .i_data  (data    )
    );
+  
+   x_delay_line_32 u_dl(
+      .i_clk   (i_clk   ),
+      .i_dl    (ctrl[0] ),
+      .o_data  (data    )
+   );
 
-
-   assign data[0] = ~data[0] & ctrl[0];
+   assign data = dl[63:32];
 
 endmodule
 

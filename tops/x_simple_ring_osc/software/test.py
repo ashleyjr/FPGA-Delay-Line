@@ -61,12 +61,19 @@ def unload_scope(addr):
     return rx
 
 
-for i in range(512):
-    write_seq_cmd(0, i, i)
-write_seq_cmd(2, 0xFFFFFFFF, 511)
+
+write_seq_cmd(0, 0x00000000, 0)
+write_seq_cmd(0, 0x00000001, 1)
+write_seq_cmd(0, 0x00000000, 2)
+write_seq_cmd(0, 0x00000001, 3)
+write_seq_cmd(0, 0x00000000, 4)
+write_seq_cmd(0, 0x00000001, 5)
+write_seq_cmd(0, 0x00000000, 6)
+write_seq_cmd(0, 0x00000001, 7)
+write_seq_cmd(2, 0x00000000, 8)
 
 seq_scope_start()
 
-for i in range(300):
+for i in range(32):
     print("Scope "+str(hex(i))+":"+str(hex(unload_scope(i))))
 

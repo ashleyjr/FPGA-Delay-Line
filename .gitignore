@@ -10,4 +10,5 @@
 *.bin
 *obj_dir*
 submodules/x_micro_sequencer/rtl/x_micro_sequencer_ram.sv 
-submodules/x_micro_scope/rtl/x_micro_scope_ram.sv 
+submodules/x_micro_scope/rtl/x_micro_scope_ram.sv
+submodules/x_delay_line_32/rtl/x_delay_line_32.sv 
