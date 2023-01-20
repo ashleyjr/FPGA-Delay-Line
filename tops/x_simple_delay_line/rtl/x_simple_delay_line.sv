@@ -1,4 +1,4 @@
-module x_simple_ring_osc (
+module x_simple_delay_line (
    input    logic    i_clk,
    input    logic    i_rst,
    input    logic    i_rx,
@@ -18,7 +18,7 @@ module x_simple_ring_osc (
       .i_data  (data    )
    );
   
-   x_delay_line_32 u_dl(
+   x_delay_line_128 u_dl(
       .i_clk   (i_clk   ),
       .i_dl    (ctrl[0] ),
       .o_data  (dl      )
