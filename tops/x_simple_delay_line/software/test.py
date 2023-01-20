@@ -74,6 +74,18 @@ write_seq_cmd(2, 0x00000000, 8)
 
 seq_scope_start()
 
+scope = []
 for i in range(32):
-    print("Scope "+str(hex(i))+":"+str(hex(unload_scope(i))))
+    scope.append(unload_scope(i))
+    print("Scope "+str(hex(i))+":"+str(hex(scope[-1])))
+
+import sys
+from vcd import VCDWriter
+
+
+with open('test.vcd', 'w+') as f:
+    with VCDWriter(f, timescale='1 ns', date='today') as writer:
+        counter_var = writer.register_var('scope', 'scope', 'integer', size=32)
+        for timestamp, value in enumerate(scope):
+            writer.change(counter_var, timestamp, value)
 
