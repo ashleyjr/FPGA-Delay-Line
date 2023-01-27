@@ -344,7 +344,7 @@ logic [32-1:0] mux_y;
 
 assign mux_s[0] = i_data[0];
 
-   (* BEL="X12/Y5/lc0" *)
+   (* BEL="X11/Y5/lc0" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut0 (
@@ -354,7 +354,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[0]    ),
       .O       (mux_s[1]  )
    );
-   (* BEL="X12/Y5/lc1" *)
+   (* BEL="X11/Y5/lc1" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut1 (
@@ -364,7 +364,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[1]    ),
       .O       (mux_s[2]  )
    );
-   (* BEL="X12/Y5/lc2" *)
+   (* BEL="X11/Y5/lc2" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut2 (
@@ -374,7 +374,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[2]    ),
       .O       (mux_s[3]  )
    );
-   (* BEL="X12/Y5/lc3" *)
+   (* BEL="X11/Y5/lc3" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut3 (
@@ -384,7 +384,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[3]    ),
       .O       (mux_s[4]  )
    );
-   (* BEL="X12/Y5/lc4" *)
+   (* BEL="X11/Y5/lc4" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut4 (
@@ -394,7 +394,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[4]    ),
       .O       (mux_s[5]  )
    );
-   (* BEL="X12/Y5/lc5" *)
+   (* BEL="X11/Y5/lc5" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut5 (
@@ -404,7 +404,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[5]    ),
       .O       (mux_s[6]  )
    );
-   (* BEL="X12/Y5/lc6" *)
+   (* BEL="X11/Y5/lc6" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut6 (
@@ -414,7 +414,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[6]    ),
       .O       (mux_s[7]  )
    );
-   (* BEL="X12/Y5/lc7" *)
+   (* BEL="X11/Y5/lc7" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut7 (
@@ -424,7 +424,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[7]    ),
       .O       (mux_s[8]  )
    );
-   (* BEL="X12/Y6/lc0" *)
+   (* BEL="X11/Y6/lc0" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut8 (
@@ -434,7 +434,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[8]    ),
       .O       (mux_s[9]  )
    );
-   (* BEL="X12/Y6/lc1" *)
+   (* BEL="X11/Y6/lc1" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut9 (
@@ -444,7 +444,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[9]    ),
       .O       (mux_s[10]  )
    );
-   (* BEL="X12/Y6/lc2" *)
+   (* BEL="X11/Y6/lc2" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut10 (
@@ -454,7 +454,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[10]    ),
       .O       (mux_s[11]  )
    );
-   (* BEL="X12/Y6/lc3" *)
+   (* BEL="X11/Y6/lc3" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut11 (
@@ -464,7 +464,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[11]    ),
       .O       (mux_s[12]  )
    );
-   (* BEL="X12/Y6/lc4" *)
+   (* BEL="X11/Y6/lc4" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut12 (
@@ -474,7 +474,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[12]    ),
       .O       (mux_s[13]  )
    );
-   (* BEL="X12/Y6/lc5" *)
+   (* BEL="X11/Y6/lc5" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut13 (
@@ -484,7 +484,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[13]    ),
       .O       (mux_s[14]  )
    );
-   (* BEL="X12/Y6/lc6" *)
+   (* BEL="X11/Y6/lc6" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut14 (
@@ -494,7 +494,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[14]    ),
       .O       (mux_s[15]  )
    );
-   (* BEL="X12/Y6/lc7" *)
+   (* BEL="X11/Y6/lc7" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut15 (
@@ -504,7 +504,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[15]    ),
       .O       (mux_s[16]  )
    );
-   (* BEL="X12/Y7/lc0" *)
+   (* BEL="X11/Y7/lc0" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut16 (
@@ -514,7 +514,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[16]    ),
       .O       (mux_s[17]  )
    );
-   (* BEL="X12/Y7/lc1" *)
+   (* BEL="X11/Y7/lc1" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut17 (
@@ -524,7 +524,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[17]    ),
       .O       (mux_s[18]  )
    );
-   (* BEL="X12/Y7/lc2" *)
+   (* BEL="X11/Y7/lc2" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut18 (
@@ -534,7 +534,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[18]    ),
       .O       (mux_s[19]  )
    );
-   (* BEL="X12/Y7/lc3" *)
+   (* BEL="X11/Y7/lc3" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut19 (
@@ -544,7 +544,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[19]    ),
       .O       (mux_s[20]  )
    );
-   (* BEL="X12/Y7/lc4" *)
+   (* BEL="X11/Y7/lc4" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut20 (
@@ -554,7 +554,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[20]    ),
       .O       (mux_s[21]  )
    );
-   (* BEL="X12/Y7/lc5" *)
+   (* BEL="X11/Y7/lc5" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut21 (
@@ -564,7 +564,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[21]    ),
       .O       (mux_s[22]  )
    );
-   (* BEL="X12/Y7/lc6" *)
+   (* BEL="X11/Y7/lc6" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut22 (
@@ -574,7 +574,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[22]    ),
       .O       (mux_s[23]  )
    );
-   (* BEL="X12/Y7/lc7" *)
+   (* BEL="X11/Y7/lc7" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut23 (
@@ -584,7 +584,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[23]    ),
       .O       (mux_s[24]  )
    );
-   (* BEL="X12/Y8/lc0" *)
+   (* BEL="X11/Y8/lc0" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut24 (
@@ -594,7 +594,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[24]    ),
       .O       (mux_s[25]  )
    );
-   (* BEL="X12/Y8/lc1" *)
+   (* BEL="X11/Y8/lc1" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut25 (
@@ -604,7 +604,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[25]    ),
       .O       (mux_s[26]  )
    );
-   (* BEL="X12/Y8/lc2" *)
+   (* BEL="X11/Y8/lc2" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut26 (
@@ -614,7 +614,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[26]    ),
       .O       (mux_s[27]  )
    );
-   (* BEL="X12/Y8/lc3" *)
+   (* BEL="X11/Y8/lc3" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut27 (
@@ -624,7 +624,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[27]    ),
       .O       (mux_s[28]  )
    );
-   (* BEL="X12/Y8/lc4" *)
+   (* BEL="X11/Y8/lc4" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut28 (
@@ -634,7 +634,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[28]    ),
       .O       (mux_s[29]  )
    );
-   (* BEL="X12/Y8/lc5" *)
+   (* BEL="X11/Y8/lc5" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut29 (
@@ -644,7 +644,7 @@ assign mux_s[0] = i_data[0];
       .I0      (mux_s[29]    ),
       .O       (mux_s[30]  )
    );
-   (* BEL="X12/Y8/lc6" *)
+   (* BEL="X11/Y8/lc6" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
    ) u_trigger_lut30 (
