@@ -1,19 +1,19 @@
 `timescale 1ns/1ps
-module fast_delay_line_tb;
+module x_mux_trigger_tb;
 
 reg            trigger;
 reg [31:0]     data;
 wire           driver;
 
-fast_delay_line u_dut(
+x_mux_trigger u_dut(
    .i_trigger  (trigger ), 
    .i_data     (data    ),
    .o_driver   (driver  )
 );
 
 initial begin
-   $dumpfile("fast_delay_line_tb.vcd");
-   $dumpvars(0,fast_delay_line_tb);
+   $dumpfile("x_mux_trigger_tb.vcd");
+   $dumpvars(0,x_mux_trigger_tb);
 end
 
 
@@ -34,4 +34,4 @@ end
 
 
 
-endmodule // test
+endmodule

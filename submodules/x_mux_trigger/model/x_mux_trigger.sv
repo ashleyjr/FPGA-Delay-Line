@@ -1,4 +1,4 @@
-module fast_delay_line(
+module x_mux_trigger(
    input    wire           i_trigger,
    input    wire [31:0]    i_data,
    output   wire           o_driver
