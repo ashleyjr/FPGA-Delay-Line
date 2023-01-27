@@ -2,11 +2,11 @@
 echo "========================================================"
 echo "Running synth..."
 rm -f syn.log
-yosys -p 'synth_ice40 -top x_simple_delay_line -blif a.blif -json a.json'\
-   rtl/x_simple_delay_line.sv \
+yosys -p 'synth_ice40 -top x_mux_trigger_32 -blif a.blif -json a.json'\
+   rtl/x_mux_trigger.sv \
    ../../submodules/x_testbench/rtl/x_testbench.sv \
    ../../submodules/x_byte_des/rtl/x_byte_des.sv \
-   ../../submodules/x_delay_line_128/rtl/x_delay_line_128.sv \
+   ../../submodules/x_mux_trigger/rtl/x_mux_trigger.sv \
    ../../submodules/x_micro_scope/rtl/x_micro_scope.sv \
    ../../submodules/x_micro_scope/rtl/x_micro_scope_ram.sv \
    ../../submodules/x_micro_sequencer/rtl/x_micro_sequencer.sv \
@@ -19,7 +19,7 @@ cat syn.log | grep -A30 statistics
 echo "========================================================"
 echo "Running place and route..."
 rm -f pnr.log
-nextpnr-ice40 --ignore-loops --hx8k --json a.json --package ct256 --pcf etc/x_simple_delay_line.pcf --asc a.asc &> pnr.log
+nextpnr-ice40 --ignore-loops --hx8k --json a.json --package ct256 --pcf etc/x_mux_trigger.pcf --asc a.asc &> pnr.log
 cat pnr.log | grep -A6 "Device utilisation"
 echo "========================================================"
 echo "Running Timing check..."

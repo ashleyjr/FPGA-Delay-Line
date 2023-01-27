@@ -1,12 +1,11 @@
-module x_simple_delay_line (
+module x_mux_trigger_32 (
    input    logic    i_clk,
    input    logic    i_rst,
    input    logic    i_rx,
    output   logic    o_tx
 );
  
-   logic [31:0] ctrl;
-   logic [127:0] dl;
+   logic [31:0] ctrl; 
    logic [31:0] data;
 
    x_testbench u_testbench(
@@ -18,13 +17,11 @@ module x_simple_delay_line (
       .i_data  (data    )
    );
   
-   x_delay_line_128 u_dl(
+   x_mux_trigger u_mt(
       .i_clk   (i_clk   ),
-      .i_dl    (ctrl[0] ),
-      .o_data  (dl      )
+      .i_data  (ctrl    ),
+      .o_data  (data    )
    );
-
-   assign data = dl[127:96];
 
 endmodule
 
