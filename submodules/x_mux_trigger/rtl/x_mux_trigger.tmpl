@@ -44,7 +44,10 @@ logic [@length@-1:0] mux_y;
    );
 -
 
-// Trigge liner
+// Trigger line
+
+assign mux_s[0] = i_data[0];
+
 +for i in range(length-1):  
    (* BEL="X12/Y@(i//8)+5@/lc@i%8@" *)
    SB_LUT4 #(

@@ -340,7 +340,10 @@ logic [32-1:0] mux_y;
       .O       (mux_y[30]    )
    );
 
-// Trigge liner
+// Trigger line
+
+assign mux_s[0] = i_data[0];
+
    (* BEL="X12/Y5/lc0" *)
    SB_LUT4 #(
       .LUT_INIT(16'h0002      )
