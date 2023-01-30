@@ -19,9 +19,9 @@ logic [@length@-1:0] mux_y;
 // s   A(S) B(~S) 
 // I2  I1   I0    | O
 //  0   0    0    | 0
-//  0   0    1    | 0  (1)
+//  0   0    1    | 1  (1)
 //  0   1    0    | 0
-//  0   1    1    | 0  (3)
+//  0   1    1    | 1  (3)
 //  1   0    0    | 0
 //  1   0    1    | 0
 //  1   1    0    | 1  (6)
@@ -30,7 +30,6 @@ logic [@length@-1:0] mux_y;
 //  0000_0000_1100_1010
 //  0    0    C    6
 
-
 +for i in range(length-1):  
    (* BEL="X12/Y@(i//8)+5@/lc@i%8@" *)
    SB_LUT4 #(
@@ -38,11 +37,13 @@ logic [@length@-1:0] mux_y;
    ) u_mux_lut@i@ (
       .I3      (1'b0          ),
       .I2      (mux_s[@i+1@]  ),
-      .I1      (mux_y[@i+1@]  ),
-      .I0      (i_data[@i+1@] ),
+      .I1      (i_data[@i+1@] ),
+      .I0      (mux_y[@i+1@]  ),
       .O       (mux_y[@i@]    )
    );
 -
+
+assign mux_y[31] = 1'b0;
 
 // Trigger line
 

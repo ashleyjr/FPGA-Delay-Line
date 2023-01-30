@@ -17,9 +17,9 @@ logic [32-1:0] mux_y;
 // s   A(S) B(~S) 
 // I2  I1   I0    | O
 //  0   0    0    | 0
-//  0   0    1    | 0  (1)
+//  0   0    1    | 1  (1)
 //  0   1    0    | 0
-//  0   1    1    | 0  (3)
+//  0   1    1    | 1  (3)
 //  1   0    0    | 0
 //  1   0    1    | 0
 //  1   1    0    | 1  (6)
@@ -28,15 +28,14 @@ logic [32-1:0] mux_y;
 //  0000_0000_1100_1010
 //  0    0    C    6
 
-
    (* BEL="X12/Y5/lc0" *)
    SB_LUT4 #(
       .LUT_INIT(16'h00C6      )
    ) u_mux_lut0 (
       .I3      (1'b0          ),
       .I2      (mux_s[1]  ),
-      .I1      (mux_y[1]  ),
-      .I0      (i_data[1] ),
+      .I1      (i_data[1] ),
+      .I0      (mux_y[1]  ),
       .O       (mux_y[0]    )
    );
    (* BEL="X12/Y5/lc1" *)
@@ -45,8 +44,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut1 (
       .I3      (1'b0          ),
       .I2      (mux_s[2]  ),
-      .I1      (mux_y[2]  ),
-      .I0      (i_data[2] ),
+      .I1      (i_data[2] ),
+      .I0      (mux_y[2]  ),
       .O       (mux_y[1]    )
    );
    (* BEL="X12/Y5/lc2" *)
@@ -55,8 +54,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut2 (
       .I3      (1'b0          ),
       .I2      (mux_s[3]  ),
-      .I1      (mux_y[3]  ),
-      .I0      (i_data[3] ),
+      .I1      (i_data[3] ),
+      .I0      (mux_y[3]  ),
       .O       (mux_y[2]    )
    );
    (* BEL="X12/Y5/lc3" *)
@@ -65,8 +64,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut3 (
       .I3      (1'b0          ),
       .I2      (mux_s[4]  ),
-      .I1      (mux_y[4]  ),
-      .I0      (i_data[4] ),
+      .I1      (i_data[4] ),
+      .I0      (mux_y[4]  ),
       .O       (mux_y[3]    )
    );
    (* BEL="X12/Y5/lc4" *)
@@ -75,8 +74,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut4 (
       .I3      (1'b0          ),
       .I2      (mux_s[5]  ),
-      .I1      (mux_y[5]  ),
-      .I0      (i_data[5] ),
+      .I1      (i_data[5] ),
+      .I0      (mux_y[5]  ),
       .O       (mux_y[4]    )
    );
    (* BEL="X12/Y5/lc5" *)
@@ -85,8 +84,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut5 (
       .I3      (1'b0          ),
       .I2      (mux_s[6]  ),
-      .I1      (mux_y[6]  ),
-      .I0      (i_data[6] ),
+      .I1      (i_data[6] ),
+      .I0      (mux_y[6]  ),
       .O       (mux_y[5]    )
    );
    (* BEL="X12/Y5/lc6" *)
@@ -95,8 +94,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut6 (
       .I3      (1'b0          ),
       .I2      (mux_s[7]  ),
-      .I1      (mux_y[7]  ),
-      .I0      (i_data[7] ),
+      .I1      (i_data[7] ),
+      .I0      (mux_y[7]  ),
       .O       (mux_y[6]    )
    );
    (* BEL="X12/Y5/lc7" *)
@@ -105,8 +104,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut7 (
       .I3      (1'b0          ),
       .I2      (mux_s[8]  ),
-      .I1      (mux_y[8]  ),
-      .I0      (i_data[8] ),
+      .I1      (i_data[8] ),
+      .I0      (mux_y[8]  ),
       .O       (mux_y[7]    )
    );
    (* BEL="X12/Y6/lc0" *)
@@ -115,8 +114,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut8 (
       .I3      (1'b0          ),
       .I2      (mux_s[9]  ),
-      .I1      (mux_y[9]  ),
-      .I0      (i_data[9] ),
+      .I1      (i_data[9] ),
+      .I0      (mux_y[9]  ),
       .O       (mux_y[8]    )
    );
    (* BEL="X12/Y6/lc1" *)
@@ -125,8 +124,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut9 (
       .I3      (1'b0          ),
       .I2      (mux_s[10]  ),
-      .I1      (mux_y[10]  ),
-      .I0      (i_data[10] ),
+      .I1      (i_data[10] ),
+      .I0      (mux_y[10]  ),
       .O       (mux_y[9]    )
    );
    (* BEL="X12/Y6/lc2" *)
@@ -135,8 +134,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut10 (
       .I3      (1'b0          ),
       .I2      (mux_s[11]  ),
-      .I1      (mux_y[11]  ),
-      .I0      (i_data[11] ),
+      .I1      (i_data[11] ),
+      .I0      (mux_y[11]  ),
       .O       (mux_y[10]    )
    );
    (* BEL="X12/Y6/lc3" *)
@@ -145,8 +144,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut11 (
       .I3      (1'b0          ),
       .I2      (mux_s[12]  ),
-      .I1      (mux_y[12]  ),
-      .I0      (i_data[12] ),
+      .I1      (i_data[12] ),
+      .I0      (mux_y[12]  ),
       .O       (mux_y[11]    )
    );
    (* BEL="X12/Y6/lc4" *)
@@ -155,8 +154,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut12 (
       .I3      (1'b0          ),
       .I2      (mux_s[13]  ),
-      .I1      (mux_y[13]  ),
-      .I0      (i_data[13] ),
+      .I1      (i_data[13] ),
+      .I0      (mux_y[13]  ),
       .O       (mux_y[12]    )
    );
    (* BEL="X12/Y6/lc5" *)
@@ -165,8 +164,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut13 (
       .I3      (1'b0          ),
       .I2      (mux_s[14]  ),
-      .I1      (mux_y[14]  ),
-      .I0      (i_data[14] ),
+      .I1      (i_data[14] ),
+      .I0      (mux_y[14]  ),
       .O       (mux_y[13]    )
    );
    (* BEL="X12/Y6/lc6" *)
@@ -175,8 +174,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut14 (
       .I3      (1'b0          ),
       .I2      (mux_s[15]  ),
-      .I1      (mux_y[15]  ),
-      .I0      (i_data[15] ),
+      .I1      (i_data[15] ),
+      .I0      (mux_y[15]  ),
       .O       (mux_y[14]    )
    );
    (* BEL="X12/Y6/lc7" *)
@@ -185,8 +184,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut15 (
       .I3      (1'b0          ),
       .I2      (mux_s[16]  ),
-      .I1      (mux_y[16]  ),
-      .I0      (i_data[16] ),
+      .I1      (i_data[16] ),
+      .I0      (mux_y[16]  ),
       .O       (mux_y[15]    )
    );
    (* BEL="X12/Y7/lc0" *)
@@ -195,8 +194,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut16 (
       .I3      (1'b0          ),
       .I2      (mux_s[17]  ),
-      .I1      (mux_y[17]  ),
-      .I0      (i_data[17] ),
+      .I1      (i_data[17] ),
+      .I0      (mux_y[17]  ),
       .O       (mux_y[16]    )
    );
    (* BEL="X12/Y7/lc1" *)
@@ -205,8 +204,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut17 (
       .I3      (1'b0          ),
       .I2      (mux_s[18]  ),
-      .I1      (mux_y[18]  ),
-      .I0      (i_data[18] ),
+      .I1      (i_data[18] ),
+      .I0      (mux_y[18]  ),
       .O       (mux_y[17]    )
    );
    (* BEL="X12/Y7/lc2" *)
@@ -215,8 +214,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut18 (
       .I3      (1'b0          ),
       .I2      (mux_s[19]  ),
-      .I1      (mux_y[19]  ),
-      .I0      (i_data[19] ),
+      .I1      (i_data[19] ),
+      .I0      (mux_y[19]  ),
       .O       (mux_y[18]    )
    );
    (* BEL="X12/Y7/lc3" *)
@@ -225,8 +224,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut19 (
       .I3      (1'b0          ),
       .I2      (mux_s[20]  ),
-      .I1      (mux_y[20]  ),
-      .I0      (i_data[20] ),
+      .I1      (i_data[20] ),
+      .I0      (mux_y[20]  ),
       .O       (mux_y[19]    )
    );
    (* BEL="X12/Y7/lc4" *)
@@ -235,8 +234,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut20 (
       .I3      (1'b0          ),
       .I2      (mux_s[21]  ),
-      .I1      (mux_y[21]  ),
-      .I0      (i_data[21] ),
+      .I1      (i_data[21] ),
+      .I0      (mux_y[21]  ),
       .O       (mux_y[20]    )
    );
    (* BEL="X12/Y7/lc5" *)
@@ -245,8 +244,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut21 (
       .I3      (1'b0          ),
       .I2      (mux_s[22]  ),
-      .I1      (mux_y[22]  ),
-      .I0      (i_data[22] ),
+      .I1      (i_data[22] ),
+      .I0      (mux_y[22]  ),
       .O       (mux_y[21]    )
    );
    (* BEL="X12/Y7/lc6" *)
@@ -255,8 +254,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut22 (
       .I3      (1'b0          ),
       .I2      (mux_s[23]  ),
-      .I1      (mux_y[23]  ),
-      .I0      (i_data[23] ),
+      .I1      (i_data[23] ),
+      .I0      (mux_y[23]  ),
       .O       (mux_y[22]    )
    );
    (* BEL="X12/Y7/lc7" *)
@@ -265,8 +264,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut23 (
       .I3      (1'b0          ),
       .I2      (mux_s[24]  ),
-      .I1      (mux_y[24]  ),
-      .I0      (i_data[24] ),
+      .I1      (i_data[24] ),
+      .I0      (mux_y[24]  ),
       .O       (mux_y[23]    )
    );
    (* BEL="X12/Y8/lc0" *)
@@ -275,8 +274,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut24 (
       .I3      (1'b0          ),
       .I2      (mux_s[25]  ),
-      .I1      (mux_y[25]  ),
-      .I0      (i_data[25] ),
+      .I1      (i_data[25] ),
+      .I0      (mux_y[25]  ),
       .O       (mux_y[24]    )
    );
    (* BEL="X12/Y8/lc1" *)
@@ -285,8 +284,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut25 (
       .I3      (1'b0          ),
       .I2      (mux_s[26]  ),
-      .I1      (mux_y[26]  ),
-      .I0      (i_data[26] ),
+      .I1      (i_data[26] ),
+      .I0      (mux_y[26]  ),
       .O       (mux_y[25]    )
    );
    (* BEL="X12/Y8/lc2" *)
@@ -295,8 +294,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut26 (
       .I3      (1'b0          ),
       .I2      (mux_s[27]  ),
-      .I1      (mux_y[27]  ),
-      .I0      (i_data[27] ),
+      .I1      (i_data[27] ),
+      .I0      (mux_y[27]  ),
       .O       (mux_y[26]    )
    );
    (* BEL="X12/Y8/lc3" *)
@@ -305,8 +304,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut27 (
       .I3      (1'b0          ),
       .I2      (mux_s[28]  ),
-      .I1      (mux_y[28]  ),
-      .I0      (i_data[28] ),
+      .I1      (i_data[28] ),
+      .I0      (mux_y[28]  ),
       .O       (mux_y[27]    )
    );
    (* BEL="X12/Y8/lc4" *)
@@ -315,8 +314,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut28 (
       .I3      (1'b0          ),
       .I2      (mux_s[29]  ),
-      .I1      (mux_y[29]  ),
-      .I0      (i_data[29] ),
+      .I1      (i_data[29] ),
+      .I0      (mux_y[29]  ),
       .O       (mux_y[28]    )
    );
    (* BEL="X12/Y8/lc5" *)
@@ -325,8 +324,8 @@ logic [32-1:0] mux_y;
    ) u_mux_lut29 (
       .I3      (1'b0          ),
       .I2      (mux_s[30]  ),
-      .I1      (mux_y[30]  ),
-      .I0      (i_data[30] ),
+      .I1      (i_data[30] ),
+      .I0      (mux_y[30]  ),
       .O       (mux_y[29]    )
    );
    (* BEL="X12/Y8/lc6" *)
@@ -335,10 +334,12 @@ logic [32-1:0] mux_y;
    ) u_mux_lut30 (
       .I3      (1'b0          ),
       .I2      (mux_s[31]  ),
-      .I1      (mux_y[31]  ),
-      .I0      (i_data[31] ),
+      .I1      (i_data[31] ),
+      .I0      (mux_y[31]  ),
       .O       (mux_y[30]    )
    );
+
+assign mux_y[31] = 1'b0;
 
 // Trigger line
 
