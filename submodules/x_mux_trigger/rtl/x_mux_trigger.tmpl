@@ -74,8 +74,8 @@ assign p0_dl[0] = mux_y[0];
       .I3      (1'b0          ),
       .I2      (1'b0          ),
       .I1      (1'b0          ),
-      .I0      (p0_dl[@i@]    ),
-      .O       (p0_dl[@i+1@]  )
+      .I0      (p0_dl[@length-1-i@]    ),
+      .O       (p0_dl[@length-1-i+1@]  )
    );
 -
 
@@ -83,15 +83,15 @@ assign p0_dl[0] = mux_y[0];
    (* BEL="X13/Y@(i//8)+1@/lc@i%8@" *)
    SB_DFF  dff_2_@i@ (
       .C       (i_clk         ),
-      .D       (p0_dl[@i+1@]  ),
-      .Q       (p1_dl[@i@]    )
+      .D       (p0_dl[@length-1-i@]  ),
+      .Q       (p1_dl[@length-1-i@]    )
    );
 
    (* BEL="X14/Y@(i//8)+1@/lc@i%8@" *)
    SB_DFF  dff_3_@i@ (
       .C       (i_clk         ),
-      .D       (p1_dl[@i@]    ),
-      .Q       (o_data[@i@]   )
+      .D       (p1_dl [@length-1-i@]    ),
+      .Q       (o_data[@length-1-i@]   )
    );
 
 -
