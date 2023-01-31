@@ -1,3 +1,0 @@
-iverilog -o x_mux_trigger x_mux_trigger_tb.sv x_mux_trigger.sv
-vvp x_mux_trigger
-gtkwave x_mux_trigger_tb.vcd

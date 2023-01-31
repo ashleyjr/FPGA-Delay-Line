@@ -1,0 +1,7 @@
+iverilog -o x_mux_trigger \
+   verif/x_mux_trigger_tb.sv \
+   rtl/x_mux_trigger.sv \
+   ../SB_LUT4/rtl/SB_LUT4.sv \
+   ../SB_DFF/rtl/SB_DFF.sv
+vvp x_mux_trigger
+gtkwave x_mux_trigger_tb.vcd

@@ -1,19 +1,20 @@
+`timescale 1ps/1fs
 +length=32#
 -
 module x_mux_trigger (
-   input    logic                         i_clk,
-   input    logic [@length@-1:0]          i_data,
-   output   logic [@length@-1:0]          o_data
+   input    wire                         i_clk,
+   input    wire [@length@-1:0]          i_data,
+   output   wire [@length@-1:0]          o_data
 );
 
-logic [@length@:0]   p0_dl;
-logic [@length@-1:0] p1_dl;
-logic [@length@-1:0] p2_dl;
+wire [@length@:0]   p0_dl;
+wire [@length@-1:0] p1_dl;
+wire [@length@-1:0] p2_dl;
 
-logic [@length@-1:0] mux_a;
-logic [@length@-1:0] mux_b;
-logic [@length@-1:0] mux_s;
-logic [@length@-1:0] mux_y;
+wire [@length@-1:0] mux_a;
+wire [@length@-1:0] mux_b;
+wire [@length@-1:0] mux_s;
+wire [@length@-1:0] mux_y;
 
 // Mux tree
 // s   A(S) B(~S) 
@@ -28,18 +29,18 @@ logic [@length@-1:0] mux_y;
 //  1   1    1    | 1  (7)
 //
 //  0000_0000_1100_1010
-//  0    0    C    6
+//  0    0    C    A
 
 +for i in range(length-1):  
    (* BEL="X12/Y@(i//8)+5@/lc@i%8@" *)
    SB_LUT4 #(
-      .LUT_INIT(16'h00C6      )
+      .LUT_INIT(16'h00CA         )
    ) u_mux_lut@i@ (
-      .I3      (1'b0          ),
-      .I2      (mux_s[@i+1@]  ),
-      .I1      (mux_y[@i+1@] ),
-      .I0      (i_data[@i+1@]  ),
-      .O       (mux_y[@i@]    )
+      .I3      (1'b0             ),
+      .I2      (mux_s[@i+1@]     ),
+      .I1      (mux_y[@i+1@]     ),
+      .I0      (i_data[@i+1@]    ),
+      .O       (mux_y[@i@]       )
    );
 -
 
