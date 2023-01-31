@@ -1,4 +1,6 @@
-module x_testbench (
+module x_testbench#(
+   p_clk_hz = 12000000 
+)(
    // Infra
    input    logic          i_clk,
    input    logic          i_rst,
@@ -43,7 +45,9 @@ module x_testbench (
    logic [31:0]   loopback_d;
    logic [31:0]   loopback_q;
 
-   x_uart_rx u_rx (
+   x_uart_rx #(
+      .p_clk_hz   (p_clk_hz      )
+   ) u_rx (
       .i_clk      (i_clk         ),
       .i_rst      (i_rst         ),
       .i_rx       (i_rx          ),
@@ -86,7 +90,9 @@ module x_testbench (
       .o_data     (scope_rdata   )
    );
 
-   x_uart_tx u_tx (
+   x_uart_tx #(
+      .p_clk_hz   (p_clk_hz      )
+   ) u_tx (
       .i_clk      (i_clk         ),
       .i_rst      (i_rst         ), 
       .i_data     (tx_data       ),

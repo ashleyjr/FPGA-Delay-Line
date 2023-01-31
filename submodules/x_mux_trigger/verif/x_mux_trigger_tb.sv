@@ -25,11 +25,11 @@ initial begin
 end
 
 initial begin
-   i_data  = 32'h00000000; 
+   i_data  = 32'h0000FFFE; 
    @(posedge i_clk); 
    @(posedge i_clk);
    @(posedge i_clk); 
-   i_data  = 32'hAAAAAAAB;  
+   i_data  = 32'h0000FFFF;  
    @(posedge i_clk); 
    @(posedge i_clk); 
    @(posedge i_clk); 
