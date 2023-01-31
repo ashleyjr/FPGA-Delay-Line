@@ -37,8 +37,8 @@ logic [@length@-1:0] mux_y;
    ) u_mux_lut@i@ (
       .I3      (1'b0          ),
       .I2      (mux_s[@i+1@]  ),
-      .I1      (i_data[@i+1@] ),
-      .I0      (mux_y[@i+1@]  ),
+      .I1      (mux_y[@i+1@] ),
+      .I0      (i_data[@i+1@]  ),
       .O       (mux_y[@i@]    )
    );
 -

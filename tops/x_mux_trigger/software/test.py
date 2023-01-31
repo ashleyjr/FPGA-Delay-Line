@@ -62,10 +62,10 @@ def unload_scope(addr):
 
 
 
-write_seq_cmd(0, 0x00000000, 0)
-write_seq_cmd(1, 0x00000007, 1)
-write_seq_cmd(0, 0x00000003, 2)
-write_seq_cmd(1, 0x00000000, 3)
+write_seq_cmd(0, 0xFFFFFFFC, 0)
+write_seq_cmd(1, 0x00000003, 1)
+write_seq_cmd(0, 0xFFFFFFFD, 2)
+write_seq_cmd(1, 0x00000003, 3)
 write_seq_cmd(2, 0x00000000, 4)
 
 seq_scope_start()
