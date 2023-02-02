@@ -33,7 +33,7 @@ wire [15:0] mux_b_d;
 
 // A side trigger/mux
 +for i in range(15):  
-(* BEL="X12/Y@(i//8)+5@/lc@i%8@" *)
+(* BEL="X14/Y@(i//8)+5@/lc@i%8@" *)
 SB_LUT4 #(
    .LUT_INIT(16'h0002         )
 ) u_trig_a_@i@ (
@@ -45,7 +45,7 @@ SB_LUT4 #(
 );
 -
 +for i in range(16):  
-(* BEL="X13/Y@(i//8)+5@/lc@i%8@" *)
+(* BEL="X12/Y@(i//8)+5@/lc@i%8@" *)
 SB_DFF u_dff_a_@i@ (
    .C       (i_clk            ),
    .D       (i_data[@(i*2)@]  ),
@@ -53,7 +53,7 @@ SB_DFF u_dff_a_@i@ (
 );
 -
 +for i in range(16):    
-(* BEL="X14/Y@(i//8)+5@/lc@i%8@" *)
+(* BEL="X13/Y@(i//8)+5@/lc@i%8@" *)
 SB_LUT4 #(
    .LUT_INIT(16'h00CA         )
 ) u_mux_a_@i@ (
@@ -68,7 +68,7 @@ assign mux_a_y[16] = 1'b0;
 
 // B side trigger/mux
 +for i in range(15):  
-(* BEL="X15/Y@(i//8)+5@/lc@i%8@" *)
+(* BEL="X17/Y@(i//8)+5@/lc@i%8@" *)
 SB_LUT4 #(
    .LUT_INIT(16'h0002         )
 ) u_trig_b_@i@ (
@@ -80,7 +80,7 @@ SB_LUT4 #(
 );
 -
 +for i in range(16):  
-(* BEL="X16/Y@(i//8)+5@/lc@i%8@" *)
+(* BEL="X15/Y@(i//8)+5@/lc@i%8@" *)
 SB_DFF u_dff_b_@i@ (
    .C       (i_clk            ),
    .D       (i_data[@(i*2)+1@]),
@@ -88,7 +88,7 @@ SB_DFF u_dff_b_@i@ (
 );
 -
 +for i in range(16):    
-(* BEL="X17/Y@(i//8)+5@/lc@i%8@" *)
+(* BEL="X16/Y@(i//8)+5@/lc@i%8@" *)
 SB_LUT4 #(
    .LUT_INIT(16'h00CA         )
 ) u_mux_b_@i@ (
@@ -147,16 +147,16 @@ SB_LUT4 #(
 (* BEL="X15/Y@(i//8)+1@/lc@i%8@" *)
 SB_DFF  u_dff_p0_@i@ (
    .C       (i_clk            ),
-   .D       (p0_dl[@31-i@]    ),
-   .Q       (p1_dl[@31-i@]    )
+   .D       (p0_dl[@i@]    ),
+   .Q       (p1_dl[@i@]    )
 );
 -
 +for i in range(32):  
 (* BEL="X16/Y@(i//8)+1@/lc@i%8@" *)
 SB_DFF  u_dff_p1_@i@ (
    .C       (i_clk            ),
-   .D       (p1_dl[@31-i@]    ),
-   .Q       (o_data[@31-i@]   )
+   .D       (p1_dl[@i@]    ),
+   .Q       (o_data[@i@]   )
 );
 -
 endmodule
