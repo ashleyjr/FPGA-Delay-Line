@@ -4,6 +4,9 @@ module SB_DFF(
    output   reg   Q
 );
 
+   // Sim only
+   initial Q = 0;
+
    always@(posedge C) begin
       Q <= D;
    end

@@ -1,0 +1,162 @@
+`timescale 1ps/1fs
+
+module x_mux_trigger_dual (
+   input    wire        i_clk,
+   input    wire [31:0] i_data,
+   output   wire [31:0] o_data
+);
+
+wire [31:0] p0_dl;
+wire [31:0] p1_dl;
+wire [31:0] p2_dl;
+wire [15:0] mux_a_s;
+wire [16:0] mux_a_y;
+wire [15:0] mux_a_d;
+wire [15:0] mux_b_s;
+wire [16:0] mux_b_y;
+wire [15:0] mux_b_d;
+
+// Mux tree
+// s   A(S) B(~S) 
+// I2  I1   I0    | O
+//  0   0    0    | 0
+//  0   0    1    | 1  (1)
+//  0   1    0    | 0
+//  0   1    1    | 1  (3)
+//  1   0    0    | 0
+//  1   0    1    | 0
+//  1   1    0    | 1  (6)
+//  1   1    1    | 1  (7)
+//
+//  0000_0000_1100_1010
+//  0    0    C    A
+
+// A side trigger/mux
++for i in range(15):  
+(* BEL="X12/Y@(i//8)+5@/lc@i%8@" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h0002         )
+) u_trig_a_@i@ (
+   .I3      (1'b0             ),
+   .I2      (1'b0             ),
+   .I1      (1'b0             ),
+   .I0      (mux_a_s[@i@]     ),
+   .O       (mux_a_s[@i+1@]   )
+);
+-
++for i in range(16):  
+(* BEL="X13/Y@(i//8)+5@/lc@i%8@" *)
+SB_DFF u_dff_a_@i@ (
+   .C       (i_clk            ),
+   .D       (i_data[@(i*2)@]  ),
+   .Q       (mux_a_d[@i@]     )
+);
+-
++for i in range(16):    
+(* BEL="X14/Y@(i//8)+5@/lc@i%8@" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h00CA         )
+) u_mux_a_@i@ (
+   .I3      (1'b0             ),
+   .I2      (mux_a_s[@i@]     ),
+   .I1      (mux_a_y[@i+1@]   ),
+   .I0      (mux_a_d[@i@]     ),
+   .O       (mux_a_y[@i@]     )
+);
+-
+assign mux_a_y[16] = 1'b0;
+
+// B side trigger/mux
++for i in range(15):  
+(* BEL="X15/Y@(i//8)+5@/lc@i%8@" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h0002         )
+) u_trig_b_@i@ (
+   .I3      (1'b0             ),
+   .I2      (1'b0             ),
+   .I1      (1'b0             ),
+   .I0      (mux_b_s[@i@]     ),
+   .O       (mux_b_s[@i+1@]   )
+);
+-
++for i in range(16):  
+(* BEL="X16/Y@(i//8)+5@/lc@i%8@" *)
+SB_DFF u_dff_b_@i@ (
+   .C       (i_clk            ),
+   .D       (i_data[@(i*2)+1@]),
+   .Q       (mux_b_d[@i@]     )
+);
+-
++for i in range(16):    
+(* BEL="X17/Y@(i//8)+5@/lc@i%8@" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h00CA         )
+) u_mux_b_@i@ (
+   .I3      (1'b0             ),
+   .I2      (mux_b_s[@i@]     ),
+   .I1      (mux_b_y[@i+1@]   ),
+   .I0      (mux_b_d[@i@]     ),
+   .O       (mux_b_y[@i@]     )
+);
+-
+
+assign mux_b_y[16] = 1'b0;
+
+// A/B 
+(* BEL="X12/Y4/lc7" *)
+SB_DFF u_dff_trig (
+   .C       (i_clk      ),
+   .D       (mux_a_s[0] ),
+   .Q       (mux_b_s[0] )
+); 
+(* BEL="X12/Y4/lc6" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h0001   )
+) u_inv (
+   .I3      (1'b0       ),
+   .I2      (1'b0       ),
+   .I1      (1'b0       ),
+   .I0      (mux_b_s[0] ),
+   .O       (mux_a_s[0] )
+);
+(* BEL="X13/Y4/lc7" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h00CA   )
+) u_mux (
+   .I3      (1'b0       ),
+   .I2      (mux_a_s[0] ),
+   .I1      (mux_a_y[0] ),
+   .I0      (mux_b_y[0] ),
+   .O       (p0_dl[31]  )
+);
+
+// Capture the driver for scoper 
++for i in range(31):  
+(* BEL="X14/Y@(i//8)+1@/lc@i%8@" *)
+SB_LUT4 #(
+   .LUT_INIT(16'h0002         )
+) u_dl_@i@ (
+   .I3      (1'b0             ),
+   .I2      (1'b0             ),
+   .I1      (1'b0             ),
+   .I0      (p0_dl[@i+1@]    ),
+   .O       (p0_dl[@i@]  )
+);
+-
++for i in range(32):  
+(* BEL="X15/Y@(i//8)+1@/lc@i%8@" *)
+SB_DFF  u_dff_p0_@i@ (
+   .C       (i_clk            ),
+   .D       (p0_dl[@31-i@]    ),
+   .Q       (p1_dl[@31-i@]    )
+);
+-
++for i in range(32):  
+(* BEL="X16/Y@(i//8)+1@/lc@i%8@" *)
+SB_DFF  u_dff_p1_@i@ (
+   .C       (i_clk            ),
+   .D       (p1_dl[@31-i@]    ),
+   .Q       (o_data[@31-i@]   )
+);
+-
+endmodule

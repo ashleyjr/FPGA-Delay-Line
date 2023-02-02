@@ -1,0 +1,7 @@
+iverilog -o x_mux_trigger_dual \
+   verif/x_mux_trigger_dual_tb.sv \
+   rtl/x_mux_trigger_dual.sv \
+   ../SB_LUT4/rtl/SB_LUT4.sv \
+   ../SB_DFF/rtl/SB_DFF.sv
+vvp x_mux_trigger_dual
+gtkwave x_mux_trigger_dual_tb.vcd
